@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>NAS Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="NAS_assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="NAS_assets/css/noscript.css" /></noscript>
+	</head>
+  <body class="is-preload"><!-- onload="modifyButton()" onhashchange="modifyButton()" onunload="modifyButton()">-->
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Neural Architecture Search</h1>
+								<h1>Using Evolutionary Algorithms</h1>
+								<p align="center">
+                  This ongoing project is a part of my PhD thesis which deals with reducing the search time for <em>Neural Architecture Search (NAS)</em>
+                  using evolutionary algorithms (<em>EA</em>). The following methods are the research papers written during this project.
+                </p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+                <li><a href="#evnas"><b>EvNAS</b></a></li>
+								<li><a href="#cmanas"><b>CMANAS</b></a></li>
+								<li><a href="#pevonas"><b>pEvoNAS</b></a></li>
+							</ul>
+						</nav>
+					</header>
+          
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="evnas">
+                <!--<h2 class="major">EvNAS</h2>-->
+								<h3 class="heading">Evolving Neural Architecture Using One Shot Model</h3>
+								<span class="image main"><img src="images/evnas.png" alt="" /></span>
+                <p>Authors: <b>Nilotpal Sinha</b>, Kuan-Wen Chen <br />
+                <i>ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO) 2021</i>
+                </p>
+                <p align="justify">
+                <b>Abstract:</b> Previous evolution based architecture search require high computational resources resulting in large search time. In this work,
+                we propose a novel way of applying a simple genetic algorithm to the neural architecture search problem called EvNAS (Evolving Neural
+                Architecture using One Shot Model) which reduces the search time significantly while still achieving better result than previous evolution
+                based methods. The architectures are represented by architecture parameter of one shot model which results in the weight sharing among the
+                given population of architectures and also weight inheritance from one generation to the next generation of architectures. We use the
+                accuracy of partially trained architecture on validation data as a prediction of its fitness to reduce the search time. We also propose a
+                decoding technique for the architecture parameter which is used to divert majority of the gradient information towards the given
+                architecture and is also used for improving the fitness prediction of the given architecture from the one shot model during the search
+                process. EvNAS searches for architecture on CIFAR-10 for 3.83 GPU day on a single GPU with top-1 test error 2.47%, which is then transferred
+                to CIFAR-100 and ImageNet achieving top-1 error 16.37% and top-5 error 7.4% respectively.
+                [<a href="https://dl.acm.org/doi/10.1145/3449639.3459275" target="_blank"><b>Full Paper</b></a>]
+                [<a href="https://github.com/nightstorm0909/EvNAS" target="_blank"><b>CODE</b></a>]</td>
+                </p>
+							</article>
+
+						<!-- CMANAS -->
+							<article id="cmanas">
+                <!--<h2 class="major">CMANAS</h2>-->
+                <h3 class="heading">Neural Architecture Search using Covariance Matrix Adaptation Evolution Strategy</h3>
+								<span class="image main"><img src="images/CMANAS.png" alt="" /></span>
+                <p>Authors: <b>Nilotpal Sinha</b>, Kuan-Wen Chen <br />
+                submitted to <i>Evolutionary Computation (MIT Press)</i>
+                </p>
+                <p align="justify">
+                  <b>Abstract:</b> Evolution-based neural architecture search requires high computational resources, resulting in long search time. In this work, we propose
+                  a framework of applying the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) to the neural architecture search problem called CMANAS,
+                  which achieves better results than previous evolution-based methods while reducing the search time significantly. The architectures are modelled
+                  using a normal distribution, which is updated using CMA-ES based on the fitness of the sampled population. We used the accuracy of a trained one
+                  shot model (OSM) on the validation data as a prediction of the fitness of an individual architecture to reduce the search time. We also used an
+                  architecture-fitness table (AF table) for keeping record of the already evaluated architecture, thus further reducing the search time. CMANAS
+                  finished the architecture search on CIFAR-10 with the top-1 test accuracy of 97.44% in 0.45 GPU day and on CIFAR-100 with the top-1 test accuracy
+                  of 83.24% for 0.6 GPU day on a single GPU. The top architectures from the searches on CIFAR-10 and CIFAR-100 were then transferred to ImageNet,
+                  achieving the top-5 accuracy of 92.6% and 92.1%, respectively.
+                  [<a href="https://arxiv.org/abs/2107.07266" target="_blank"><b>Full Paper</b></a>]
+                  [<a href="https://github.com/nightstorm0909/CMANAS" target="_blank"><b>CODE</b></a>]</td>
+                </p>
+                <p>
+                  Following is the visualization of the architecture search on CIFAR-10 dataset by the weight sharing based CMANAS. Here we visualize the mean of
+                  the normal distribution and its progression during the architecture search.
+                </p>
+                <span class="image main"><img src="images/c10_mean_shared.gif" alt="" /></span>
+                <p>
+                  Similarly, following is the visualization of the architecture search on CIFAR-10 dataset by the non-weight sharing based CMANAS.
+                </p>
+                <span class="image main"><img src="images/c10_mean_nonshared.gif" alt="" /></span>
+
+							</article>
+            
+            <!-- pevonas -->
+							<article id="pevonas">
+                <h3 class="heading">Neural Architecture Search using Progressive Evolution</h3>
+
+								<span class="image main"><img src="images/search_space_reduction.png" alt="" /></span>
+                <p>Authors: <b>Nilotpal Sinha</b>, Kuan-Wen Chen <br />
+                submitted to <i>Conference on Computer Vision and Pattern Recognition (CVPR) 2022</i>
+                </p>
+                <p align="justify">
+                  <b>Abstract:</b> Vanilla neural architecture search using evolutionary algorithms (EA) involves evaluating each architecture by
+                  training it from scratch, which is extremely time-consuming. This can be reduced by using a supernet to estimate the
+                  fitness of every architecture in the search space due to its weight sharing nature. However, the estimated fitness is
+                  very noisy due to the co-adaptation of the operations in the supernet. In this work, we propose a method called
+                  pEvoNAS wherein the whole neural architecture search space is progressively reduced to smaller search space regions with good
+                  architectures. This is achieved by using a trained supernet for architecture evaluation during the architecture search using
+                  genetic algorithm to find search space regions with good architectures. Upon reaching the final reduced search space, the supernet is then
+                  used to search for the best architecture in that search space using evolution. The search is also enhanced by using weight inheritance
+                  wherein the supernet for the smaller search space inherits its weights from previous trained supernet for the bigger search space.
+                  Exerimentally, pEvoNAS gives better results on CIFAR-10 and CIFAR-100 while using significantly less computational resources as compared
+                  to previous EA-based methods.
+                  [<a href="https://github.com/nightstorm0909/pEvoNAS" target="_blank"><b>CODE</b></a>]</td>
+                </p>
+							</article>
+					</div>
+          <ul class="actions">
+            <li><button onclick="goBack()" class="button top_padding primary icon solid fa-angle-back">Back</button></li>
+            <!--<li><a href="javascript:;" class="button top_padding primary icon solid fa-home">Home</a></li>
+            <li><a href="index.html#projects" class="button top_padding icon solid fa-home">Home</a></li>-->
+          </ul>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="NAS_assets/js/jquery.min.js"></script>
+			<script src="NAS_assets/js/browser.min.js"></script>
+			<script src="NAS_assets/js/breakpoints.min.js"></script>
+			<script src="NAS_assets/js/util.js"></script>
+			<script src="NAS_assets/js/main.js"></script>
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+        /*function modifyButton(){
+          cur_location = window.location.href;
+          str_split = cur_location.split('#');
+          console.log(cur_location, str_split);
+          if (str_split.length > 1){
+            if (str_split[str_split.length - 1] == ''){
+              document.querySelector("ul.actions > li > a").innerHTML = "Home";
+              document.querySelector("ul.actions > li > a").href = "index.html#projects";
+            }else{
+              document.querySelector("ul.actions > li > a").innerHTML = "Back";
+              document.querySelector("ul.actions > li > a").href = "javascript:;";
+              document.querySelector("ul.actions > li > a").onclick = "goBack()";
+            }
+          }else{
+            document.querySelector("ul.actions > li > a").innerHTML = "Home";
+            document.querySelector("ul.actions > li > a").href = "index.html#projects";
+          }
+        }*/
+      </script>
+
+	</body>
+</html>
