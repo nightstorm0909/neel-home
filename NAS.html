@@ -36,7 +36,7 @@
 							<ul>
                 <li><a href="#evnas"><b>EvNAS</b></a></li>
 								<li><a href="#cmanas"><b>CMANAS</b></a></li>
-								<li><a href="#pevonas"><b>pEvoNAS</b></a></li>
+								<li><a href="#pevonas"><b>pEvNAS</b></a></li>
 							</ul>
 						</nav>
 					</header>
@@ -104,7 +104,7 @@
             
             <!-- pevonas -->
 							<article id="pevonas">
-                <h3 class="heading">Neural Architecture Search using Progressive Evolution</h3>
+                <h3 class="heading">Progressive Evolutionary Neural Architecture Search</h3>
 
 								<span class="image main"><img src="images/search_space_reduction.png" alt="" /></span>
                 <p>Authors: <b>Nilotpal Sinha</b>, Kuan-Wen Chen <br />
@@ -116,12 +116,12 @@
                   training it from scratch, which is extremely time-consuming. This can be reduced by using a supernet to estimate the
                   fitness of every architecture in the search space due to its weight sharing nature. However, the estimated fitness is
                   very noisy due to the co-adaptation of the operations in the supernet. In this work, we propose a method called
-                  pEvoNAS wherein the whole neural architecture search space is progressively reduced to smaller search space regions with good
+                  pEvNAS wherein the whole neural architecture search space is progressively reduced to smaller search space regions with good
                   architectures. This is achieved by using a trained supernet for architecture evaluation during the architecture search using
                   genetic algorithm to find search space regions with good architectures. Upon reaching the final reduced search space, the supernet is then
                   used to search for the best architecture in that search space using evolution. The search is also enhanced by using weight inheritance
                   wherein the supernet for the smaller search space inherits its weights from previous trained supernet for the bigger search space.
-                  Exerimentally, pEvoNAS gives better results on CIFAR-10 and CIFAR-100 while using significantly less computational resources as compared
+                  Exerimentally, pEvNAS gives better results on CIFAR-10 and CIFAR-100 while using significantly less computational resources as compared
                   to previous EA-based methods.
                   [<a href="https://github.com/nightstorm0909/pEvoNAS" target="_blank"><b>CODE</b></a>]</td>
                 </p>
