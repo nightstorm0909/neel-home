@@ -1,4 +1,4 @@
-# [Personal Website of Nilotpal Sinha](https://neel-home.github.io/)
+# [Personal Website of Nilotpal Sinha](https://nightstorm0909.github.io/neel-home)
 
 This website was created using the template from  [HTML5 UP](https://html5up.net/)
 
