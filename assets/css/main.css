@@ -3542,7 +3542,8 @@ input, select, textarea {
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		/*background: #312450;*/
+		background: #101012;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3796,10 +3797,13 @@ input, select, textarea {
 
 			#sidebar nav a:hover {
 				color: rgba(255, 255, 255, 0.55);
+                font-size: 0.7em;
 			}
 
 			#sidebar nav a.active {
-				color: #ffffff;
+				#color: #ffffff;
+                color: #97ca72;
+                font-size: 0.9em;
 			}
 
 				#sidebar nav a.active:after {
