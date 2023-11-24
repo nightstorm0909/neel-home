@@ -3819,6 +3819,7 @@ input, select, textarea {
 				#color: #ffffff;
                 color: #97ca72;
                 font-size: 1.0em;
+                letter-spacing: 0.1em;
 			}
 
 				#sidebar nav a.active:after {
@@ -3944,3 +3945,9 @@ input, select, textarea {
 			}
 
 		}
+
+/* Neel*/
+#vita .uleducation li::before {
+    font-weight: bold;
+    margin-right: 0.5em; /* Adjust the spacing between the arrow and the text */
+}
