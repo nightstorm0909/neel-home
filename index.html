@@ -51,22 +51,29 @@
               <p style="text-align:center"><img src="images/profile_pic.jpg" alt=""  style="width: 30%; height: auto; float:right; display: block; " /></p>
 							<h1>Nilotpal Sinha</h1>
                             <p>I finished my <b>PhD in Computer Science</b> from National Yang Ming Chiao Tung University in 2022.
-              I was a part of the <a href="http://covis.cs.nctu.edu.tw" target="_blank">COVIS Lab</a>,
-              advised by <a href="https://www.cs.nycu.edu.tw/members/detail/kuanwen" target="_blank">Prof. Kuan-Wen Chen (陳冠文)</a>
-              during my doctoral studies. My doctoral thesis mainly dealt with designing algorithms that can automatically
-              design the architecture of neural networks with reduced search time cost.
-              I am working as a <b>post-doctoral researcher</b> at <a href="https://cvi2.uni.lu/" target="_blank">Computer Vision, Imaging & Machine Intelligence Research Group (CVI2 Lab)</a> in <a href="https://www.uni.lu/en/" target="_blank">University of Luxembourg</a>.
-              Currently, I am working on designing algorithms for automatically creating AI models (i.e. deep neural networks) for edge devices (i.e. devices with low power comsumption such as raspberry pi, NVIDIA Jetson Nano etc.) in space applications.
+              I was a part of the <a href="http://covis.cs.nctu.edu.tw" target="_blank" style="color:red">COVIS Lab</a>,
+              advised by <a href="https://www.cs.nycu.edu.tw/members/detail/kuanwen" target="_blank" style="color:red">Prof. Kuan-Wen Chen (陳冠文)</a>
+              during my doctoral studies. My doctoral thesis mainly dealt with designing algorithms that can <b>automatically
+              design the neural networks architecture</b> that gives good performance for a given task. Normally, such algorithms
+              takes long time to give the result and my works was to design such algorithms with reduced search time cost.
+              </p>
+              <p>
+              I am working as a <b>post-doctoral researcher</b> at <a href="https://cvi2.uni.lu/" target="_blank" style="color:red">Computer
+              Vision, Imaging & Machine Intelligence Research Group (CVI2 Lab)</a> in 
+              <a href="https://www.uni.lu/en/" target="_blank" style="color:red">University of Luxembourg</a>.
+              Currently, I am working on designing algorithms for automatically creating AI models (i.e. deep neural 
+              network architecture) for edge devices (i.e. devices with low power comsumption such as raspberry pi, 
+              NVIDIA Jetson Nano etc.) in space applications.
               </p>
             <p>
               I am fueled by my passion for learning new things which has led me to my simple philosophy.
               "Have I gained any new knowledge today as compared to yesterday?". It has helped me to
-              learn new skills (like programming, writing research papers, hacking things, creating a
-              personal website) and pursue seemingly daunting goals like reading 100 books, pursuing PhD
-              and trying to understand quantum mechanics.
+              learn new skills (like programming, writing research papers, hacking things) and pursue seemingly 
+              daunting goals like reading 100 books, pursuing PhD and trying to understand quantum mechanics.
             </p>
               <h2>Research Interests</h2>
-              <p> Artificial Intelligence, AutoML, Machine Learning, Evolutionary Computation, Signal Processing, Neural Architecture Search, Computer Vision.
+              <p> Artificial Intelligence, AutoML, Machine Learning, Evolutionary Computation, Neural Architecture Search, Computer Vision,
+              Signal Processing.
               </p>
               <h2>Programming Languages</h2>
 							<p>Python, Matlab, C++, C, Assembly language, Machine learning frameworks: pytorch, tensorflow, HTML, Javascript</p>
@@ -93,7 +100,12 @@
                               <h3>PhD. in Computer Science (2017 - 2022)</h3>
                               <h4>National Yang Ming Chiao Tung University, Taiwan</h4>
                                   &emsp;&#8618; My doctoral thesis mainly dealt with designing algorithms that can automatically
-                                                design the architecture of neural networks with reduced search time cost.<br />
+                                                design the architecture of neural networks that gives good performance for a given task.
+                                                Such algorithms are called Neural Architecture Search (<b><em>NAS</em></b>).<br />
+                                  &emsp;&#8618; In general, NAS algorithms are computationally expensive and require hugh amount of time to 
+                                                perform the architecture search.<br />
+                                  &emsp;&#8618; My thesis focued on designing NAS algorithms that require lower computational resources
+                                                and can perform the architecture search in less time.<br />
                                   &emsp;&#8618; I used genetic algorithm for searching the Neural Architecture Search Space.<br />
                                   &emsp;&#8618; For the Neural Architecture evaluation, I used the supernet (or One Shot Model) which
                                                 reduced the search time from 3000 GPU hours to 10 GPU hours.<br />
@@ -103,7 +115,8 @@
                           <li><h3>Masters in Electrical Engineering (2015 - 2017)</h3>
                               <h4>National Cheng Kung University, Taiwan</h4>
                                   &emsp;&#8618; In my master's thesis, I designed a signal processing algorithm for processing the
-                                  3D heart pulse. The main objective was to classify different types of heart pulse.<br /> 
+                                  3D heart pulse.<br />
+                                  &emsp;&#8618; The main objective was to classify different types of heart pulse.<br /> 
                                   &emsp;&#8618; It was done using the multi-dimensional fourier analysis. For more information, please checkout the
                                   <b><a href="https://www.hindawi.com/journals/ecam/2019/5734018" target="_blank">paper</a></b><br /> 
                           </li>
@@ -159,10 +172,20 @@
                             <h3>Postdoctoral Researcher (November 2022 - Present )</h3>
                             <h4><a href="https://cvi2.uni.lu/people/" target="_blank" style="color:red">CVI2 Lab</a>, University of Luxembourg</h4>
                             <p> &emsp;&#8618;<em> Develop algorithms for automatically designing Neural Network Architecture (NAS)
-                                for edge devices (i.e. low power consuming devices like raspberry pi etc.) for space applications.</em> <br />
-                                &emsp;&#8618;<em> Published in <b>WACV 2024</b>. We propose a hardware aware algorithm that performs
-                                the architecture search for 6 different edge devices at 8000x reduction in search time. For more details,
-                                please checkout the <a href="https://arxiv.org/abs/2311.03923" target="_blank" style="color:red">paper</a></em>.<br /> 
+                                                  for edge devices (i.e. low power consuming devices like raspberry pi etc.) 
+                                                  for space applications.</em> <br />
+                                &emsp;&#8618;<em> Published in <b>WACV 2024</b>. We propose a <u style="color:white">hardware aware 
+                                                  algorithm</u> that performs the neural architecture search for a given task, a specific 
+                                                  edge device and the specific hardware cost of that edge device. </em><br />
+                                &emsp;&#8618;<em> An example application: find the best performing neural network architecture for 
+                                                  the classification task on NVIDIA Jetson Nano under the constraint that latency of the 
+                                                  architecture has to be less than 2 seconds </em> <br />
+                                &emsp;&#8618;<em> The effectiveness of the proposed method was shown experimentally on different edge 
+                                                  devices. For more details, please checkout the 
+                                                  <a href="https://arxiv.org/abs/2311.03923" target="_blank" style="color:red">paper</a></em>.<br />
+                                &emsp;&#8618;<em> <u style="color:white">Submitted a full-length paper in CVPR 2024</u>. The paper deals with 
+                                                  pruning channels in a given network (ResNet) using Information Bottleneck Theory.
+                                             </em><br /> 
                                 &emsp;&#8618;<em> <b>Mentor PhD student</b> in his thesis.</em> <br />
                                 &emsp;&#8618;<em> <b>Teaching</b> course on programming edge devices like raspberry pi.</em></p>
                         </li>
@@ -172,7 +195,7 @@
                             <h4>Microsoft, Taiwan</h4>
                             <p> &emsp;&#8618;<em> Develop algorithm that automatically designs the deep neural network architectures
                                 for multiple tasks.</em><br />
-                                &emsp;&#8618;<em> The <b>objective</b> is to find a neural network architecture that gives good performance in 
+                                &emsp;&#8618;<em> The <b>objective</b> was to find a neural network architecture that gives good performance in 
                                 multiple tasks (i.e. more than 1 task)</em><br />
                             </p>
                         </li>
