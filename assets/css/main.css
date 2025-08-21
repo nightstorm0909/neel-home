@@ -3266,7 +3266,8 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #000000;
+			#background-color: #5052b5;
 		}
 
 		.wrapper.style2-alt {
@@ -3283,15 +3284,18 @@ input, select, textarea {
 
     .wrapper.style4 {
 			#background-color: #006064;
-			background-color: #113946;
+			#background-color: #113946;
+			background-color: #000000;
 		}
 
 		.wrapper.style5 {
 			#background-color: #37474f;
-			background-color: #1F4172;
+			#background-color: #1F4172;
+			background-color: #000000;
 		}
         .wrapper.style6 {
-			background-color: #1f2329;
+			#background-color: #1f2329;
+			background-color: #000000;
 		}
 
 		.wrapper.fullscreen {
@@ -3816,8 +3820,8 @@ input, select, textarea {
 			}
 
 			#sidebar nav a.active {
-				#color: #ffffff;
-                color: #97ca72;
+				color: #ffffff;
+                #color: #97ca72;
                 font-size: 1.0em;
                 letter-spacing: 0.1em;
 			}

@@ -99,7 +99,8 @@ input, select, textarea {
 	}
 
 	body {
-		background: #242943;
+		#background: #242943;
+		background: #000000;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1785,6 +1786,7 @@ input, select, textarea {
 			header.major > :first-child:after {
 				content: '';
 				background-color: #ffffff;
+                #background: #000000;
 				display: block;
 				height: 2px;
 				margin: 0.325em 0 0.5em 0;
@@ -3114,7 +3116,8 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #2a2f4a;
+		#background-color: #2a2f4a;
+		background-color: #101012;
 		box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
 		cursor: default;
 		font-weight: 600;
