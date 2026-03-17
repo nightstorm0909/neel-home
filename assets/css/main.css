@@ -3955,3 +3955,17 @@ input, select, textarea {
     font-weight: bold;
     margin-right: 0.5em; /* Adjust the spacing between the arrow and the text */
 }
+
+.visitor-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* scale down iframe/script output */
+.visitor-map iframe,
+.visitor-map div {
+    transform: scale(0.75);   /* adjust: 0.6 – 0.8 */
+    transform-origin: center;
+}
