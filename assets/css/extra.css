@@ -16,6 +16,33 @@
   animation: heartbeat 2s infinite;
 }
 
+
+.year-badge {
+  display: inline-block;
+  min-width: 3.2em;
+  margin-left: 0.35em;
+  margin-right: 0.55em;
+  padding: 0.12em 0.6em;
+  border-radius: 0.35em;
+  font-size: 0.72em;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  color: #ffffff;
+  vertical-align: baseline;
+}
+
+.year-badge.y2026 { background-color: var(--year-2026); }
+.year-badge.y2025 { background-color: var(--year-2025); }
+.year-badge.y2024 { background-color: var(--year-2024); color: #1b1b1b; }
+.year-badge.y2023 { background-color: var(--year-2023); }
+.year-badge.y2022 { background-color: var(--year-2022); }
+.year-badge.y2021 { background-color: var(--year-2021); }
+.year-badge.y2019 { background-color: var(--year-2019); }
+.year-badge.y2017 { background-color: var(--year-2017); }
+.year-badge.y2016 { background-color: var(--year-2016); }
+.year-badge.y2015 { background-color: var(--year-2015); }
+
 @keyframes heartbeat {
   0% {
     transform:scale(1)
@@ -27,3 +54,63 @@
     transform:scale(1)
   }
 }
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding: 0.5em 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 52px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2em;
+  margin-bottom: 1.4em;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 44px;
+  top: 0.6em;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid currentColor;
+  z-index: 1;
+}
+
+.timeline-year {
+  min-width: 38px;
+  font-weight: bold;
+  font-size: 0.85em;
+  text-align: right;
+  padding-top: 0.3em;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  padding-left: 1.8em;
+  padding-top: 0.2em;
+  line-height: 1.6;
+}
+
+/* Year badge colors — reuse your existing .year-badge palette */
+.timeline-year.y2026 { color: #ff6b6b; }
+.timeline-year.y2025 { color: #ffd93d; }
+.timeline-year.y2024 { color: #6bcb77; }
+.timeline-year.y2023 { color: #4d96ff; }
+.timeline-year.y2022 { color: #c77dff; }
+.timeline-year.y2021 { color: #ff9f1c; }
