@@ -1,19 +1,15 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Neel's Homepage</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/extra.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+	<title>Nilotpal Sinha — Homepage</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Personal research website of Nilotpal Sinha — Senior Researcher at Dolby Laboratories. AI, Neural Architecture Search, Edge AI." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBXWTHK9C7"></script>
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9936f8ecfe374f4592e62f61b008f9b5"}'></script>
@@ -25,623 +21,606 @@
 
       gtag('config', 'G-JBXWTHK9C7');
     </script>
-	</head>
-	<body class="is-preload">
+	<link rel="stylesheet" href="assets/css/brutalist.css?v=5" />
+</head>
+<body>
+	<div class="mobile-bar">
+		<div class="brand-mark">N. Sinha<span>Researcher</span></div>
+		<div class="mobile-bar-actions">
+			<button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">Menu</button>
+		</div>
+	</div>
+	<div class="backdrop" id="backdrop" hidden></div>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-          <!--<img src="images/profile_pic.jpg" alt="" data-position="center" />-->
-					<nav>
-						<ul>
-                            <li style="font-size: 20px;"><a href="#intro">About Me</a></li>
-							<li style="font-size: 20px;"><a href="#vita">Education</a></li>
-                            <li style="font-size: 20px;"><a href="#work">Work Experience</a></li>
-                            <li style="font-size: 20px;"><a href="#publications">Publications</a></li>
-							<!--<li style="font-size: 20px;"><a href="#projects">Personal Projects</a></li> -->
-							<li style="font-size: 20px;"><a href="#contact">Contact me</a></li>
-							<li style="font-size: 20px;"><a href="#miscellaneous">Miscellaneous</a></li>
+	<div class="site">
+		<aside class="sidebar" id="sidebar">
+			<div class="brand-mark">Nilotpal Sinha<span>AI Researcher</span></div>
+			<nav aria-label="Primary">
+				<ul class="nav-list">
+					<li><a href="#intro">About Me</a></li>
+					<li><a href="#vita">Vita</a></li>
+					<li><a href="#work">Work Experience</a></li>
+					<li><a href="#publications">Publications</a></li>
+					<li><a href="#projects">Personal Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="#miscellaneous">Miscellaneous</a></li>
+				</ul>
+			</nav>
+			<div class="theme-toggle">
+				<label id="themeLabel">Theme</label>
+				<div class="theme-btns" role="group" aria-labelledby="themeLabel">
+					<button type="button" id="themeLight" aria-pressed="true">Light</button>
+					<button type="button" id="themeDark" aria-pressed="false">Dark</button>
+				</div>
+			</div>
+		</aside>
+
+		<main>
+			<!-- INTRO -->
+			<section id="intro" class="section reveal">
+				<div class="hero-grid">
+					<div class="hero-copy reveal">
+						<p class="section-label">Personal Site / Research Profile</p>
+						<h1 class="name">Nilotpal<br />Sinha</h1>
+						<p class="hero-role">
+							<em>Senior AI Researcher</em> at Dolby Laboratories (ATG)
+						</p>
+						<p class="hero-body">
+							Building an <b>adaptive multimodal data platform</b> that continuously learns from incoming data and employs <b>agentic AI</b> to deliver
+							personalized content and recommendations.
+						</p>
+						<p class="hero-body">
+							Previously, I worked as a <b>post-doctoral researcher</b> at the <a href="https://cvi2.uni.lu/" target="_blank" rel="noopener">CVI2 Lab</a>,
+							<a href="https://www.uni.lu/en/" target="_blank" rel="noopener">University of Luxembourg</a>. 
+							Here, I focused on designing <b>Hardware Aware Neural Architecture Search (HW-NAS)</b> algorithms
+							for automatically creating AI models, optimized for edge devices with low power consumption, in space applications.
+						</p>
+						<p class="hero-body">
+							PhD in Computer Science (2022), National Yang Ming Chiao Tung University, under
+							<a href="https://www.cs.nycu.edu.tw/members/detail/kuanwen" target="_blank" rel="noopener">Prof. Kuan-Wen Chen</a>
+							(<a href="http://covis.cs.nctu.edu.tw" target="_blank" rel="noopener">COVIS Lab</a>).
+							Doctoral work: efficient Neural Architecture Search that cuts search cost and time.
+						</p>
+						<ul class="btn-row">
+							<li><a class="btn btn-primary" href="https://scholar.google.com/citations?hl=en&user=lyYx7MMAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a></li>
+							<li><a class="btn" href="https://1drv.ms/b/s!Ap7hdSPdxJiwgqMLgShLwSTHLWivsg?e=b1WE4w" target="_blank" rel="noopener">My CV</a></li>
+							<li><a class="btn" href="https://github.com/nightstorm0909" target="_blank" rel="noopener">GitHub</a></li>
 						</ul>
-					</nav>
+
+					<div class="meta-block reveal">
+							<h2>Research Interests</h2>
+							<p>Artificial Intelligence, Multi-Modal AI, Agentic AI, AutoML, Evolutionary Computation</p>
+						</div>
+					<div class="meta-block reveal">
+							<h2>Programming Languages</h2>
+							<p>Python, Matlab, C++, C, Assembly language · ML frameworks: pytorch, tensorflow · HTML, Javascript</p>
+						</div>
+					</div>
+					<figure class="hero-photo reveal">
+						<img src="images/profile_pic.jpg" alt="Portrait of Nilotpal Sinha" />
+					</figure>
 				</div>
 			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Intro -->
-					<section id="intro" class="wrapper style6 fullscreen fade-up">
-						<div class="inner">
-              <p style="text-align:center"><img src="images/profile_pic.jpg" alt=""  style="width: 30%; height: auto; float:right; display: block; " /></p>
-							<h1>Nilotpal Sinha</h1>
-              <p>
-              I am currently working as <b>Senior AI Researcher</b> at the Advanced Technology Group (ATG) in <b>Dolby Laboratories</b>, Bengaluru, India. 
-              My research focuses on <b>agentic AI</b> for personalization and on designing <b>multimodal data platform</b> that supports continual learning
-              and adaptation of foundation models across diverse applications.
-              </p>
-              <p>
-              Previously, I worked as a <b>post-doctoral researcher</b> at the <a href="https://cvi2.uni.lu/" target="_blank" style="color:yellow">Computer
-              Vision, Imaging & Machine Intelligence Research Group (CVI2 Lab)</a> at
-              <a href="https://www.uni.lu/en/" target="_blank" style="color:yellow">University of Luxembourg</a>. 
-              Here, I focused on designing <b>Hardware Aware Neural Architecture Search (HW-NAS)</b> algorithms
-              for automatically creating AI models, optimized for
-              edge devices with low power consumption, such as Raspberry Pi and NVIDIA Jetson Nano, in
-              space applications.
-              </p>
-              <p>
-              I finished my <b>PhD in Computer Science</b> at the National Yang Ming Chiao Tung University
-              in 2022 under the supervision of
-              <a href="https://www.cs.nycu.edu.tw/members/detail/kuanwen" target="_blank" style="color:yellow">Prof. Kuan-Wen Chen (陳冠文)</a>
-              as part of the <a href="http://covis.cs.nctu.edu.tw" target="_blank" style="color:yellow">COVIS Lab</a>.
-              during my doctoral studies. My doctoral research concentrated on developing efficient
-              <b>Neural Architecture Search (NAS)</b> algorithms
-              that could automatically generate high-performing neural network architectures for given
-              tasks, with a particular emphasis on significantly reducing the typically high computational
-              cost and time required for such searches.
-              </p>
-             
-          <h2>Research Interests</h2>
-              <p> Efficient Artificial Intelligence, Multi-Modal AI, Agentic AI, AutoML, Computer Vision
-              </p>
-              <h2>Programming Languages</h2>
-							<p>Python, Matlab, C++, C, Assembly language, Machine learning frameworks: pytorch, tensorflow, HTML, Javascript</p>
-            <!--
-              <h2>Language</h2>
-              <p>English, Hindi, Bengali, Bishnupriya Manipuri</p>
-            -->
-							<ul class="actions">
-                                <!--<li><a href="#vita" class="button scrolly">Learn more</a></li>-->
-								<li><a href="https://scholar.google.com/citations?hl=en&user=lyYx7MMAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" class="button scrolly">Google Scholar page</a></li>
-                                <!--<li><a href="https://1drv.ms/b/s!Ap7hdSPdxJiwgqIWI1g0xw3_ijtINA?e=AX7xzD" target="_blank"  class="button scrolly">My Resume</a></li>-->
-								<li><a href="https://1drv.ms/b/s!Ap7hdSPdxJiwgqMLgShLwSTHLWivsg?e=b1WE4w" target="_blank"  class="button scrolly">My CV</a></li>
-                <!--<li><a href="https://github.com/nightstorm0909" target="_blank" class="button scrolly">GitHub</a></li>-->
-							</ul>
-						</div>
-					</section>
-        
-                <!-- Vita -->
-                <section id="vita" class="wrapper style4 fullscreen fade-up">
-						<div class="inner">
-              <!--<div class="row">-->
-                  <div class="col-6 col-12-medium">
-                      <h1 style="text-align:center">Education</h1>
-                      <ul class="uleducation">
-                          <li>
-                              <h3>PhD. in Computer Science (2017 - 2022)</h3>
-                              <h4>National Yang Ming Chiao Tung University, Taiwan</h4>
-                              &emsp;&#8618; <b>Advisor: Dr. <a href="https://scholar.nycu.edu.tw/en/persons/kuan-wen-chen/" target="_blank" style="color: yellow">Kuan-Wen Chen</a></b><br />
-                                  &emsp;&#8618; Thesis: My doctoral thesis mainly dealt with designing algorithms that can automatically
-                                                design the architecture of neural networks that gives good performance for a given task.
-                                                Such algorithms are called Neural Architecture Search (<b><em>NAS</em></b>).<br />
-                                  <!--&emsp;&#8618; In general, NAS algorithms are computationally expensive and require hugh amount of time to 
-                                                perform the architecture search.<br />
-                                  &emsp;&#8618; My thesis focued on designing NAS algorithms that require lower computational resources
-                                                and can perform the architecture search in less time.<br />
-                                  &emsp;&#8618; I used genetic algorithm for searching the Neural Architecture Search Space.<br />
-                                  &emsp;&#8618; For the Neural Architecture evaluation, I used the supernet (or One Shot Model) which
-                                                reduced the search time from 3000 GPU hours to 10 GPU hours.<br />
-                                  -->
-                                  &emsp;&#8618; For more details on the published papers, please check the
-                                  <b><a href="NAS.html" style="color: yellow">link</a></b>.
-                          </li>
-                          <li><h3>Masters in Electrical Engineering (2015 - 2017)</h3>
-                              <h4>National Cheng Kung University, Taiwan</h4>
-                                  &emsp;&#8618; <b>Advisor: Dr. Ching-Hsing Luo</b><br />
-                                  &emsp;&#8618; Thesis: In my master's thesis, I designed a signal processing algorithm for processing the
-                                  3D heart pulse.<br />
-                                  <!--&emsp;&#8618; The main objective was to classify different types of heart pulse.<br /> 
-                                  &emsp;&#8618; It was done using the multi-dimensional fourier analysis. For more information, please checkout the
-                                  <b><a href="https://www.hindawi.com/journals/ecam/2019/5734018" target="_blank">paper</a></b><br /> -->
-                          </li>
-                          </li>
-                          <li><h3>Bachelor</b> in Electrical Engineering (2009 - 2013)</h3>
-                              <h4>National Institute of Technology, Silchar, India</h4>
-                          </li>
-                      </ul>
-                  </div>
-              <!--</div>-->
-                <h1 style="text-align:center">Awards</h1>
-                  <ul>
-                      <li>Recipient of 2017 Mediatek Inc. ASEAN South Asia “<b>Taiwan Advanced Study Fellowship</b>”.
-                          (<b><a href="https://corp.mediatek.tw/corporate-social-responsibility/corporate-social-responsibility-news/2017-mediatek-inc-the-association-of-southeast-asian-nations-asean-south-asia-taiwan-fellowship-admission-announcement" target="_blank" style="color:yellow">link</a></b>)
-                      </li>
-                      <li>Recipient of <b>Scholarship for Outstanding New Student Award</b>,
-                          National Yang Ming Chiao Tung University, Hsinchu City, Taiwan
-                      </li>
-                      <li>Recipient of <b>NCKU Distinguished International Student Scholarship</b>,
-                          National Cheng Kung University, Tainan, Taiwan
-                      </li>
-                  </ul>
-                <h1 style="text-align:center">Activities</h1>
-                  <ul>
-                      <li style="text-align:justify">I am one of the co-organizers of the 
-                          <b><a href="https://www.meetup.com/luxrgroup" target="_blank" style="color:yellow">Luxembourg Data Science</a></b> group.
-                          The group <b>organizes talks from academia and industry people</b> who share their experiences in topics related
-                          to data science, machine learning, big data and AI.</li>
-                      <li style="text-align:justify">I was the <b>team leader</b> of the media committee of the 
-                          <b>International Student Union</b> called  “United International Students Alliance (UISA)” in
-                          National Cheng Kung University (NCKU). Our team designed the website for UISA and was responsible for taking
-                          care of the social media aspects of UISA. </li>
-                      <li><b>Reviewer</b> of <br />
-                      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; border-spacing: 0">
-                          <tr>
-                            <th style="text-align: center;
-                                font-weight: bold;
-                                padding: 8px 12px;
-                                border-right: 2px solid #ffffff;
-                                background: #333333;
-                                color: #ffffff;">
-                                Journals
-                            </th>
-                            <th style="text-align: center;
-                                font-weight: bold;
-                                padding: 8px 12px;
-                                background: #333333;
-                                color: #ffffff;">
-                                Conferences
-                            </th>
-                          </tr>
-                          <tr>
-                            <td style="padding: 8px 12px; border-right: 2px solid #ffffff;">
-                                  &emsp;&#8618; <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235" target="_blank">IEEE Transactions on Evolutionary Computation<br /></a>
-                                  &emsp;&#8618; <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83" target="_blank">IEEE Transactions on Image Processing<br /></a>
-                                  &emsp;&#8618; <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021" target="_blank">IEEE Transactions on Systems, Man, and Cybernetics: Systems<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/pattern-recognition" target="_blank">Pattern Recognition<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank">Neurocomputing<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/knowledge-based-systems" target="_blank">Knowledge-Based Systems<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/swarm-and-evolutionary-computation" target="_blank">Swarm and Evolutionary Computation<br /></a>
-                                  &emsp;&#8618; <a href="https://link.springer.com/journal/11263" target="_blank">International Journal of Computer Vision<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/information-sciences" target="_blank">Information Sciences<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/medical-image-analysis" target="_blank">Medical Image Analysis<br /></a>
-                                  &emsp;&#8618; <a href="https://www.journals.elsevier.com/engineering-applications-of-artificial-intelligence" target="_blank">Engineering Applications of Artificial Intelligence<br /></a>
-                                  &emsp;&#8618; <a href="https://www.journals.elsevier.com/international-journal-of-electrical-power-and-energy-systems" target="_blank">International Journal of
-                                    Electrical Power & Energy Systems<br /></a>
-                                  &emsp;&#8618; <a href="https://www.journals.elsevier.com/engineering-science-and-technology-an-international-journal" target="_blank">Engineering Science and Technology, an International Journal<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/expert-systems-with-applications" target="_blank">Expert Systems with Applications<br /></a>
-                                  &emsp;&#8618; <a href="https://www.tandfonline.com/journals/uemp20" target="_blank">Electric Power Components and Systems Journal<br /></a>
-                                  &emsp;&#8618; <a href="https://www.sciencedirect.com/journal/computer-physics-communications" target="_blank">Computer Physics Communications<br /></a>
-                            </td>
-                            <td style="padding: 8px 12px;">
-                                  &emsp;&#8618; <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</a> 2026<br />
-                                  &emsp;&#8618; <a href="https://wacv2025.thecvf.com" target="_blank">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)</a> 2025<br />
-                                  &emsp;&#8618; <a href="https://ieeexplore.ieee.org/xpl/conhome/6604419/proceeding" target="_blank">European Workshop on Visual Information Processing (EUVIP) </a> 2023, 2024<br />
-                            </td>
-                          </tr>
-                      </table>
-                    </li>
-                  </ul>
-            </div>
-          </section>
+			<!-- VITA -->
+			<section id="vita" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">01 — Vita</p>
+					<h2>Education</h2>
+					<ul class="brutal-list reveal-stagger">
+						<li class="brutal-card reveal">
+							<h3>PhD. in Computer Science (2017 – 2022)</h3>
+							<h4>National Yang Ming Chiao Tung University, Taiwan</h4>
+							<div class="detail">
+								<span class="arrow">↪</span>
+								Doctoral thesis on Neural Architecture Search (<b><em>NAS</em></b>) —
+								algorithms that automatically design neural network architectures for a given task.
+								For published papers, see the <a href="NAS.html"><b>NAS page</b></a>.
+							</div>
+						</li>
+						<li class="brutal-card reveal">
+							<h3>Masters in Electrical Engineering (2015 – 2017)</h3>
+							<h4>National Cheng Kung University, Taiwan</h4>
+							<div class="detail">
+								<span class="arrow">↪</span>
+								Master’s thesis: signal processing algorithm for processing the 3D heart pulse.
+							</div>
+						</li>
+						<li class="brutal-card reveal">
+							<h3>Bachelor in Electrical Engineering (2009 – 2013)</h3>
+							<h4>National Institute of Technology, Silchar, India</h4>
+						</li>
+					</ul>
 
-          <section id="work" class="wrapper style6 fullscreen fade-up">
-            <div class="inner">
-                <div class="col-6 col-12-medium">
-                  <h1 style="text-align:center">Work Experience</h1>
-                    <ul>
-                        <li>
-                            <h3>Senior Researcher (October 2024 - Present)</h3>
-                            <h4>Advanced Research Group (ATG), Dolby Laboratories, Bengaluru, India</h4>
-                            <p>
-                            &emsp;&#8618;<em> Leading the development of core component in Dolby’s data platform for <b> continual adaptation of multimodal foundation models </b> from newly arriving datasets, resulting in novel research contributions published at ICML.</em><br />
-                                &emsp;&#8618;<em> Leading the development of an <b>agentic AI personalization system</b> for immersive user experiences, resulting in the filing of <b>two patents</b>.</em><br />
-                                &emsp;&#8618;<em> Led the development of a scalable platform backbone that connects independently developed AI services through automated discovery and communication.</em><br />
-                                &emsp;&#8618;<em> Led <b>intern recruitment and mentorship</b>, contributing to multiple research publications accepted at <b>CVPR 2026</b> and <b>ICML 2026</b>.</em><br />
-                            </p>
-                        </li>
-                        <li>
-                            <h3>Senior Edge Applications Research Engineer (July 2024 - September 2024)</h3>
-                            <h4>Advanced Research Group (ATG), Dolby Laboratories, Bengaluru, India</h4>
-                            <p>
-                                &emsp;&#8618;<em> Led a team to build a hybrid <b>on-premise/cloud compute platform</b>, achieving <b>95%+ experiment reproducibility</b> through containerized workflows and pinned dependencies.</em><br />
-                                &emsp;&#8618;<em> Collaborated with researchers from different teams to design a system for deploying AI models across <b>diverse edge devices</b>, reducing deployment time from 3 weeks to 1 week.</em><br />
-                            </p>
-                        </li>
-                        <li>
-                            <h3>Postdoctoral Researcher (November 2022 - July 2024 )</h3>
-                            <h4><a href="https://cvi2.uni.lu/people/" target="_blank" style="color:yellow">CVI2 Lab</a>, University of Luxembourg</h4>
-                            <p>
-                                &emsp;&#8618;<em> Develop algorithms for automatically designing efficient Hardware Aware Neural Network
-                                    Architecture (HW-NAS) for <b>edge devices</b> (i.e. low power consuming devices like raspberry
-                                                  pi etc.) for space applications.</em> <br />
-                                &emsp;&#8618;<em> Published in <b>WACV 2024 and CVPR Workshop 2024</b>.<br />
-                                &emsp;&#8618; <b>Mentoring</b> PhD student in his thesis which resulted in a full-length paper in <b>WACV</b> 2025. <br/> 
-                                &emsp;&#8618;<em> <b>Teaching</b> course on Computer Vison and implementing AI algorithms on <b>edge devices</b> like raspberry pi.</em></p>
-                                                  <!--
-                                &emsp;&#8618;<em> <b>Mentor PhD student</b> in his thesis.</em> This resulted in <b>a full-length paper in WACV 2025</b>. The paper deals with pruning channels in a given network (ResNet) using Information Bottleneck Theory.<br />
-                                -->
-                        </li>
-                        
-                        <li>
-                            <h3>Software Engineer Intern (January 2022 - June 2022)</h3>
-                            <h4>Microsoft, Taiwan</h4>
-                            <p> &emsp;&#8618;<em> Develop algorithm that automatically designs the deep neural network architectures
-                                for multiple tasks.</em><br />
-                                &emsp;&#8618;<em> The <b>objective</b> was to find a neural network architecture that gives good performance in 
-                                multiple tasks (i.e. more than 1 task)</em><br />
-                            </p>
-                        </li>
-                        <li>
-                            <h3>Research Assistant in Luo Lab (February 2017 - May 2017)</h3>
-                            <h4>National Cheng Kung University, Taiwan</h4>
-                            <p> &emsp;&#8618;<em> Developing a mathematical model for analysing the 3D heart pulse resulting in the 
-                                <a href="https://www.hindawi.com/journals/ecam/2019/5734018" target="_blank" style="color:yellow">paper</a>.</em>
-                            </p>
-                        </li>
-                        <!--
-                        <li>(January 2014 - January 2015)<br />Research Assistant<br />
-                            Power Quality Assessment and Improvement in Barak Valley in Assam, India<br />
-                            <p> &emsp;&#8618;<em> Developing methods for estimating the harmonic parameters of a power signal containing
-                            harmonics, sub-harmonics, inter-harmonics resulting in 5 papers in SCI journals.</em></p>
-                        </li>
-                        -->
-                    </ul>
-                </div>
-            </div>
-          </section>
-      <!--
-      <section id="activities" class="wrapper style4 fade-up">
-        <div class="inner">
-          <h1>Activities</h1>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-year y2026">2026</div>
-              <div class="timeline-content">Submitted to ACM Multimedia 2026</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2026">2026 </div>
-              <div class="timeline-content"> [Jan] Work on reasoning in VLM model published in <b>CVPR</b> 2026
-                (<a href="https://arxiv.org/abs/2511.18373" target="_blank"><b>paper</b></a>)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2025">2025</div>
-              <div class="timeline-content">Work on AI model pruning published in <b>WACV</b> 2025
-                (<a href="https://openaccess.thecvf.com/content/WACV2025/papers/Rostami_Information_Theoretic_Pruning_of_Coupled_Channels_in_Deep_Neural_Networks_WACV_2025_paper.pdf" target="_blank"><b>paper</b></a>)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2024">2024</div>
-              <div class="timeline-content">Started working as <b>Senior AI Researcher</b> at the Advanced Technology Group (ATG) in Dolby Laboratories</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2024">2024</div>
-              <div class="timeline-content">Work on multi-objective hardware aware neural architecture search published in <b>CVPR</b> 2024
-                (<a href="https://openaccess.thecvf.com/content/CVPR2024W/ECV24/html/Sinha_Multi-Objective_Hardware_Aware_Neural_Architecture_Search_using_Hardware_Cost_Diversity_CVPRW_2024_paper.html" target="_blank"><b>paper</b></a>)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2024">2024</div>
-              <div class="timeline-content">Work on hardware aware neural architecture search published in <b>WACV</b> 2024
-                (<a href="https://openaccess.thecvf.com/content/WACV2024/html/Sinha_Hardware_Aware_Evolutionary_Neural_Architecture_Search_Using_Representation_Similarity_Metric_WACV_2024_paper.html" target="_blank"><b>paper</b></a>)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2023">2023</div>
-              <div class="timeline-content">Work on neural architecture search published in <b>Evolutionary Computation (MIT Press)</b> 2023
-                (<a href="https://direct.mit.edu/evco/article-abstract/doi/10.1162/evco_a_00331/115656/Neural-Architecture-Search-using-Covariance-Matrix?redirectedFrom=fulltext" target="_blank"><b>paper</b></a>)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2022">2022</div>
-              <div class="timeline-content">Started <b>Post-doc</b> at the Computer Vision, Imaging &amp; Machine Intelligence Research Group (CVI2 Lab) at University of Luxembourg</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2022">2022</div>
-              <div class="timeline-content">Finished <b>PhD</b> with thesis: Neural Architecture Search Using Efficient Evolutionary Algorithms</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2022">2022</div>
-              <div class="timeline-content">Work on neural architecture search published in <b>GECCO</b> 2022
-                (<a href="https://dl.acm.org/doi/abs/10.1145/3520304.3528889" target="_blank"><b>paper</b></a>)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year y2022">2022</div>
-              <div class="timeline-content">Work on neural architecture search published in <b>GECCO</b> 2022
-                (<a href="https://dl.acm.org/doi/abs/10.1145/3512290.3528707" target="_blank"><b>paper</b></a>)</div>
-            </div>
-            <div class="timeline-item last">
-              <div class="timeline-year y2021">2021</div>
-              <div class="timeline-content">Work on neural architecture search published in <b>GECCO</b> 2021
-                (<a href="https://dl.acm.org/doi/10.1145/3449639.3459275" target="_blank"><b>paper</b></a>)</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    -->
-		
-	    <!-- publications -->
-                
-        <section id="publications" class="wrapper style4 fade-up">
-              <div class="inner">
-                <h1 style="text-align:center">Publications</h1>
-                <h3>Multi-Modal AI papers</h3>
-                <!-- <section>-->
-                <div class="table-wrapper">
-                    <table class="alt">
-                        <tbody>
-                            <tr >
-                                <td>1.</td>
-                                <td>Avi Gupta, Nilotpal Sinha, Vishnu Raj, Sambuddha Saha, Pratik Joshi, Koteswar Rao Jerripothula, Tammam Tillo. “Generalizing Multimodal Foundational Models in Context-Driven Class Incremental Learning” <b>WACV</b> 2027 (Under Review).
-                            <!-- [<a href="https://arxiv.org/abs/2511.18373" target="_blank"><b>paper</b></a>]-->
-                            </td>
-                            </tr>
-                            <tr >
-                                <td>2.</td>
-                                <td>Avi Gupta, Nilotpal Sinha, Vishnu Raj, Sambuddha Saha, Pratik Joshi, Koteswar Rao Jerripothula, Tammam Tillo. “Listen, Look, and Learn: Learning Without Forgetting in SAM-Audio” <b>ICML</b> 2026.
-                            [<a href="https://openreview.net/forum?id=yjxf1saheJ" target="_blank"><b>paper</b></a>] [<a href="https://arxiv.org/abs/2606.10887" target="_blank"><b>arxiv</b></a>] </td>
-                            </tr>
-                            
-                            <tr id="mass">
-                                <td>3.</td>
-                                <td>Xiyang Wu, Zongxia Li, Jihui Jin, Guangyao Shi, Gouthaman KV, Vishnu Raj, <b>Nilotpal Sinha</b>, Jingxi Chen, Fan Du, Dinesh Manocha, “MASS: Motion-Aware Spatial-Temporal Grounding for Physics Reasoning and Comprehension in Vision-Language Models”, IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>) 2026.
-                            [<a href="https://openaccess.thecvf.com/content/CVPR2026F/html/Wu_MASS_Motion-Aware_Spatial-temporal_Grounding_for_Physics_Reasoning_and_Comprehension_in_CVPRF_2026_paper.html" target="_blank"><b>paper</b></a>]
-                            <!--[<a href="https://arxiv.org/abs/2511.18373" target="_blank"><b>arxiv</b></a>]-->
-                            </td>
-                            </tr>
-                        </tbody>
-                    </table>
-              <!--</section>-->
-                </div>
-              	<h3>EdgeAI related papers</h3>
-                <!-- <section>-->
-                <div class="table-wrapper">
-                    <table class="alt">
-                        <tbody>
-                            <tr id="ITPCC">
-                                <td>1.</td>
-                                <td>Peyman Rostami, <b>Nilotpal Sinha</b>, Nidhaleddine Chenni, Anis Kacem, Abd El Rahman Shabayek, Carl Shneider, Djamila Aouada, “Information Theoretic Pruning of Coupled Channels in Deep Neural Networks”, IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>) 2025.
-                            [<a href="https://openaccess.thecvf.com/content/WACV2025/papers/Rostami_Information_Theoretic_Pruning_of_Coupled_Channels_in_Deep_Neural_Networks_WACV_2025_paper.pdf" target="_blank"><b>paper</b></a>]
-                            </td>
-                            </tr>
-                            <tr id="MO-HDNAS">
-                                <td>2.</td>
-                                <td><b>Nilotpal Sinha</b>, Peyman Rostami, Abd El Rahman Shabayek, Anis Kacem, Djamila Aouada, “Multi-Objective Hardware Aware Neural Architecture Search using Hardware Cost Diversity”, IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>) Workshop 2024.
-                                    Workshop Name: <a href="https://sites.google.com/view/ecv24/home" target="_blank">Efficient Deep Learning for Computer Vision</a>.
-                            [<a href="https://openaccess.thecvf.com/content/CVPR2024W/ECV24/html/Sinha_Multi-Objective_Hardware_Aware_Neural_Architecture_Search_using_Hardware_Cost_Diversity_CVPRW_2024_paper.html" target="_blank"><b>paper</b></a>]
-                            </td>
-                            </tr>
-                            <tr id="HW-RSNAS">
-                                <td>3.</td>
-                                <td><b>Nilotpal Sinha</b>, Abd El Rahman Shabayek, Anis Kacem, Peyman Rostami, Carl Shneider, Djamila Aouada, “Hardware Aware Evolutionary Neural Architecture Search using Representation Similarity Metric”, IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>) 2024.
-                        [<a href="https://openaccess.thecvf.com/content/WACV2024/html/Sinha_Hardware_Aware_Evolutionary_Neural_Architecture_Search_Using_Representation_Similarity_Metric_WACV_2024_paper.html" target="_blank"><b>paper</b></a>]
-                        [<a href="https://www.youtube.com/watch?v=hUHSBlOyfA8" target="_blank"><b style="color:yellow">Video Link</b></a>]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-              <!--</section>-->
-                </div>
-              <h3>Neural Architecture Search related papers</h3>
-              <div class="table-wrapper">
-                    <table class="alt">
-                        <tbody>
-                            <tr id="CMANAS">
-                                <td>1.</td>
-                                <td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Neural Architecture Search using Covariance Matrix Adaptation Evolution
-                            Strategy”. Evolutionary Computation (MIT Press) 2023 (Impact Factor: 6.8).
-                            [<a href="https://direct.mit.edu/evco/article-abstract/doi/10.1162/evco_a_00331/115656/Neural-Architecture-Search-using-Covariance-Matrix?redirectedFrom=fulltext" target="_blank"><b>paper</b></a>]
-                            [<a href="https://arxiv.org/abs/2204.00188" target="_blank"><b>arXiv</b></a>]
-                            [<a href="https://github.com/nightstorm0909/CMANAS" target="_blank"><b>code</b></a>]
-                                </td>
-                            </tr>
-                            <tr id="NEvoNAS">
-                                <td>2.</td>
-                                <td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Novelty Driven Evolutionary Neural Architecture Search", ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO) 2022.
-                            [<a href="https://dl.acm.org/doi/abs/10.1145/3520304.3528889" target="_blank"><b>paper</b></a>]
-                            [<a href="https://arxiv.org/abs/2204.00188" target="_blank"><b>arXiv</b></a>]
-                            [<a href="https://github.com/nightstorm0909/NEvoNAS" target="_blank"><b>code</b></a>]
-                            [<a href="https://www.youtube.com/watch?v=g6ANX__Y5mQ" target="_blank"><b style="color:yellow">Video Link</b></a>]
-                                </td>
-                            </tr>
-                            <tr id="pEvoNAS">
-                                <td>3.</td>
-                                <td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Neural Architecture Search using Progressive Evolution", ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO) 2022.
-                            [<a href="https://dl.acm.org/doi/abs/10.1145/3512290.3528707" target="_blank"><b>paper</b></a>]
-                            [<a href="https://arxiv.org/abs/2203.01559" target="_blank"><b>arXiv</b></a>]
-                            [<a href="https://github.com/nightstorm0909/pEvoNAS" target="_blank"><b>code</b></a>]
-                            [<a href="https://www.youtube.com/watch?v=8R2D_ZolsGs" target="_blank"><b style="color:yellow">Video Link</b></a>]
-                                </td>
-                            </tr>
-                            <tr id="EvNAS">
-                                <td>4.</td>
-                                <td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Evolving Neural Architecture Using One Shot Model", ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO) 2021.
-                            [<a href="https://dl.acm.org/doi/10.1145/3449639.3459275" target="_blank"><b>paper</b></a>]
-                            [<a href="https://github.com/nightstorm0909/EvNAS" target="_blank"><b>code</b></a>]
-                            [<a href="https://www.youtube.com/watch?v=NHw_hYh7CT0" target="_blank"><b style="color:yellow">Video Link</b></a>]
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            <!--</section>-->
-              </div>
-              <h3>Bio-Medical Signal Processing related paper</h3>
-                <!-- <section>-->
-                <div class="table-wrapper">
-                    <table class="alt">
-                        <tbody>
-                            <tr id="3Dheart_pulse">
-                                <td>1.</td>
-                                <td>Bo Peng, Ching-Hsing Luo, <b>Nilotpal Sinha</b>, Cheng-Chi Tai, Xiaohua Xie and Haiqing Xie, “Fourier Series Analysis for Novel Spatiotemporal Pulse Waves: Normal, Taut, and Slippery Pulse Images”, Evidence-based Complementary and Alternative Medicine, Volume 2019 (Impact Factor: 2.06).
-                            [<a href="https://www.hindawi.com/journals/ecam/2019/5734018" target="_blank"><b>paper</b></a>]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-            <!--</section>-->
-              </div>
-              <h3>Signal Processing related papers</h3>
-                  <div class="table-wrapper">
-                    <table class="alt">
-                        <tbody>
-                            <tr id="harmonics">
-                                <td>1.</td>
-                                <td>S K Singh, D Kumari, <b>Nilotpal Sinha</b>, A K Goswami, N Sinha “Gravity Search Algorithm hybridized Recursive
-                                Least Square method for power system harmonic estimation”, Engineering Science and Technology, an International
-                                Journal (Elsevier), DOI- 10.1016/j.jestch.2017.01.006, 2017. (Impact Factor: 5.7). 
-                                [<a href="https://www.sciencedirect.com/science/article/pii/S2215098616308710" target="_blank"><b>paper</b></a>]</td>
-                            </tr>
-                        <tr>
-                                <td>2.</td>
-                              <td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Robust Estimation of Power System Harmonics Using
-                                a Hybrid Firefly Based Recursive Least Square Algorithm”, (SCI Journal), International Journal of Electrical Power
-                                and Energy Systems (IJEPES) (Elsevier) Journal, Elsevier, vol. 80, Issue C, Pages 287 – 296, 2016. (Impact Factor: 5.2) 
-                                [<a href="https://www.sciencedirect.com/science/article/pii/S0142061516000582" target="_blank"><b>paper</b></a>]</td>
-                        </tr>
-                        <tr>
-                                <td>3.</td>
-                              <td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Several Variants of Kalman Filter Algorithm for
-                                Power System Harmonic Estimation” (SCI Journal), International Journal of Electrical Power and Energy Systems (IJEPES)
-                                (Elsevier), Vol. 78, issue C, Pages 793 - 800, 2016. (Impact Factor: 5.2) 
-                                [<a href="https://www.sciencedirect.com/science/article/pii/S0142061515005803" target="_blank"><b>paper</b></a>]</td>
-                        </tr>
-                        <tr>
-                                <td>4.</td>
-                              <td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Optimal Estimation of Power System Harmonics Using
-                                a Hybrid Firefly Algorithm Based Least Square Method” (SCI Journal), Soft Computing, Springer Journal, pages 1-14,
-                                2015. (Impact Factor: 4.1)
-                                [<a href="https://link.springer.com/article/10.1007/s00500-015-1877-0" target="_blank"><b>paper</b></a>]</td>
-                        </tr>
-                        <tr>
-                                <td>5.</td>
-                              <td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Variable Constraint Based Least Mean Square
-                                Algorithm for Power System Harmonic Parameter Estimation” (SCI Journal), International Journal of Electrical Power
-                                and Energy Systems (IJEPES) (Elsevier), vol. 73, Pages 218-228, 2015. (Impact Factor: 5.2) 
-                                [<a href="https://www.sciencedirect.com/science/article/pii/S0142061515002008" target="_blank"><b>paper</b></a>]</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!--</section>-->
-              </div>
-              For full of papers, please go my <a href="https://scholar.google.com/citations?hl=en&user=lyYx7MMAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" style="color: yellow">Google Scholar page</a>.
-        </section>
-				        
-        <!-- Contact -->
-					<section id="contact" class="wrapper style6 fullscreen fade-up">
-						<div class="inner">
-              <section id="contact" class="wrapper style6 fade-up">
-                <div class="inner">
-                  <h2>Get in touch</h2>
-                  <div class="split style1">
-                    <section>
-                      <ul class="contact">
-                         <li>
-                           <b>Email: </b> nightstorm1990[at]protonmail.com
-                         </li>
-                         <li>
-                          <h3>Social</h3>
-                          <ul class="icons">
-                            <li><a href="https://github.com/nightstorm0909" target="_blank" class="icon brands fa-github fa-lg"><span class="label">GitHub</span></a></li>
-                            <li><a href="https://www.linkedin.com/in/nilotpal-sinha-phd-382b2357" target="_blank" class="icon brands fa-linkedin-in fa-lg"><span class="label">LinkedIn</span></a></li>
-                            <li><a href="https://www.researchgate.net/profile/Nilotpal-Sinha" target="_blank" class="fab fa-researchgate fa-lg"><span class="label">ResearchGate</span></a></li>
-                          </ul>
-                         </li>
-                         <li>
-                          <h4>If you are interested in my reading list, you can checkout my Goodreads profile:
-                              <a href="https://www.goodreads.com/user/show/118703212-leen" target="_blank" class="icon brands fa-goodreads fa-lg"><span class="label">Goodreads</span></a>
-                          </h4>
-                         </li>
-                      </ul>
-                    </section>
-                  </div>
-                </div>
-            </section>
+					<h2>Awards</h2>
+					<ul class="plain-list">
+						<li>
+							Recipient of 2017 Mediatek Inc. ASEAN South Asia
+							“<b>Taiwan Advanced Study Fellowship</b>”.
+							(<a href="https://corp.mediatek.tw/corporate-social-responsibility/corporate-social-responsibility-news/2017-mediatek-inc-the-association-of-southeast-asian-nations-asean-south-asia-taiwan-fellowship-admission-announcement" target="_blank" rel="noopener">link</a>)
+						</li>
+						<li>
+							Recipient of <b>Scholarship for Outstanding New Student Award</b>,
+							National Yang Ming Chiao Tung University, Hsinchu City, Taiwan
+						</li>
+						<li>
+							Recipient of <b>NCKU Distinguished International Student Scholarship</b>,
+							National Cheng Kung University, Tainan, Taiwan
+						</li>
+					</ul>
 
-						</div>
-					</section>
-         
-        <!-- Miscellaneous -->
-          <section id="miscellaneous" class="wrapper style4 fade-up">
-            <div class="inner">
-              <section>
-                <h2 style="text-align:center">Goals</h2>
-                <div class="features">
-                  <section>
-                    <span class="icon solid major fas fa-book"></span>
-                    <h3><a href="./books100.html">Reading 100 books</a> (<span style="color: #1aff1a">&#10004;</span>)</h3>
-                        <p  align="justify">The quest of pursuing knowledge led me to my first pet project, which started on March 2019. It took me 3 years to finish this goal
-                        and was very intrumental in forming my present psyche. One of the key insights that I got during this period was that "It is just as difficult to
-                        unlearn something as it is to learn something."
-                        <a href="./books100.html">Read More</a></p>
-                  </section>
-                  <section>
-                    <span class="icon solid major fa fa-university"></span>
-                      <h3>Try to learn something new everyday (<span style="color: #1aff1a">Life long goal</span>)</h3>
-                          <ul>
-                            <li><p  align="justify">In the pursuit of knowledge, I came across something very fundamental about the world around us. The information content of the
-                        world is unimaginatively large and it will take a life long effort to get aquainted with it. So, it became my life long goal to increase
-                        my knowledge every single day.</p></li>
-                            <li>Following this philosophy, my long term goal is to <span style="color: #1aff1a">finish reading 1000 books in the next 20 years.</span></li>
-                            <li>Checkout my <a href="https://www.goodreads.com/review/list/118703212-leen?shelf=currently-reading" target="_blank" style="color: orange">
-                                Goodreads profile</a> to see what I am currently reading.</li>
-                          </ul>
-                  </section>
-                  <section>
-                    <span class="icon solid major fa fa-heartbeat heartbeat" style="color:yellow"></span>
-                      <h3>Living a healthy lifestyle (<span style="color: #1aff1a">Life long goal</span>)</h3>
-                          <ul>
-                            <li><p  align="justify">With growing age, I have grown to appreciate the benefits of exercise, and healthy eating. I have also experimented with intermittent
-                        fasting with positive results.</p>
-                            </li>
-                            <li>This has forced me to create a habbit of going to <span style="color: #1aff1a">gym atleast 3 times a week.</span></li>
-                          </ul>
-                  </section>
-                  <section>
-                    <span class="icon solid major fas fa-atom fa-spin"></span>
-                      <h3>Working knowledge of Quantum Computing(<span style="color: #1aff1a">&#10004;</span>)</h3>
-                          <ul>
-                            <li><p  align="justify">It started as a pet project during the summer break of 2020 with the goal of understanding the weirdness of the quantum
-                            mechanics and how can we leverage it for computation i.e. "Quantum Computation". </p>
-                            </li>
-                            <li><p  align="justify">My aim is to use this knowledge as a base to launch into another interesting field of combining quantum computation with
-                              artificial intelligence.</p>
-                             </li>
-                            <li>This led me to aquire <a href="https://1drv.ms/b/s!Ap7hdSPdxJiwgqIVjzmUAw6C7pkUdA?e=DPfogv" target="_blank" style="color: orange">Bronze diploma</a>
-                             and <a href="https://1drv.ms/b/s!Ap7hdSPdxJiwgqI1GsQ_rGT_KIlYXw?e=SYGbPX" target="_blank" style="color: orange">Silver diploma</a> from
-                             <a href="https://qworld.net/" target="_blank" style="color: orange">QWorld</a>. This gave me experience with
-                             <a href="https://qiskit.org/" target="_blank" style="color: orange">Qiskit</a>, an open-source SDK for working with quantum computers.
-                            </li>
-                          </ul>
-
-                        
-                  </section>
-                  <section>
-                    <span class="icon solid major fa fa-cube"></span>
-                      <h3>Working knowledge of Blockchain(<span style="color: #1aff1a">&#10004;</span>)</h3>
-                        <p  align="justify">This was a fun endeavor to understand the emerging technology of blockchain. I got interested in this topic after I started reading about investment.
-                        Though my primary focus was investment using blockchain, I now appreciate the technology after understanding the basics of the blockchain technology.
-                        I wonder if the technology will be useful in fields other than replacing the fiat currencies.</p>
-                  </section>
-                  <section>
-                    <span class="icon solid major fas fa-refresh fa-spin"></span>
-                      <h3>Habit of not making a habit (<span style="color: #1aff1a">Life long goal</span>)</h3>
-                        <p  align="justify">Humans like to create a habit out of anything possible as it helps us to arrive at a solution to known problem much faster.
-                        The solutions might not be optimal and so we should always try to update our habits. But as we grow old, updating a single habit becomes costly
-                        in terms of both mental and physical aspects. <span style="color: #1aff1a">Since we are designed to create habits, my hope is to try to create a
-                        habit of not making a habit</span>. </p>
-                  </section>
-                </div>
-						</div>
-            <!--<h5 style="text-align:center; margin-top: 10px;">Visitors Around the World</h2>
-            <div class="visitor-map">
-                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=pzWeCK_gdLhtjGN-ZQJXvs57Y5e70Py26WU6xGa0FkY&cl=ffffff&w=a"></script>
-            </div>-->
-
-            </section>
-
-          
-			</div>
-
-    
-    
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style5">
-				<div class="inner">
-					<ul class="menu">
-                        <li>Design: <a href="http://html5up.net" target="_blank" style="color:yellow">HTML5 UP</a></li>
+					<h2>Activities</h2>
+					<ul class="plain-list">
+						<li>
+							Delivered an invited talk on
+							<a href="https://sites.google.com/view/wsdl26/programme" target="_blank" rel="noopener">Agentic AI at the Winter School on Deep Learning 2026</a>,
+							organized by the Indian Statistical Institute, Kolkata.
+						</li>
+						<li>
+							Co-organizer of the
+							<a href="https://www.meetup.com/luxrgroup" target="_blank" rel="noopener"><b>Luxembourg Data Science</b></a> group —
+							talks from academia and industry on data science, machine learning, big data and AI.
+						</li>
+						<li>
+							<b>Team leader</b> of the media committee of the International Student Union
+							“United International Students Alliance (UISA)” at NCKU — website and social media.
+						</li>
+						<li>
+							<b>Reviewer</b>
+							<table class="review-table">
+								<thead>
+									<tr>
+										<th>Journals</th>
+										<th>Conferences</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<span class="arrow">↪</span> <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235" target="_blank" rel="noopener">IEEE Transactions on Evolutionary Computation</a><br />
+											<span class="arrow">↪</span> <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83" target="_blank" rel="noopener">IEEE Transactions on Image Processing</a><br />
+											<span class="arrow">↪</span> <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021" target="_blank" rel="noopener">IEEE Transactions on Systems, Man, and Cybernetics: Systems</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/pattern-recognition" target="_blank" rel="noopener">Pattern Recognition</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank" rel="noopener">Neurocomputing</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/knowledge-based-systems" target="_blank" rel="noopener">Knowledge-Based Systems</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/swarm-and-evolutionary-computation" target="_blank" rel="noopener">Swarm and Evolutionary Computation</a><br />
+											<span class="arrow">↪</span> <a href="https://link.springer.com/journal/11263" target="_blank" rel="noopener">International Journal of Computer Vision</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/information-sciences" target="_blank" rel="noopener">Information Sciences</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/medical-image-analysis" target="_blank" rel="noopener">Medical Image Analysis</a><br />
+											<span class="arrow">↪</span> <a href="https://www.journals.elsevier.com/engineering-applications-of-artificial-intelligence" target="_blank" rel="noopener">Engineering Applications of Artificial Intelligence</a><br />
+											<span class="arrow">↪</span> <a href="https://www.journals.elsevier.com/international-journal-of-electrical-power-and-energy-systems" target="_blank" rel="noopener">International Journal of Electrical Power &amp; Energy Systems</a><br />
+											<span class="arrow">↪</span> <a href="https://www.journals.elsevier.com/engineering-science-and-technology-an-international-journal" target="_blank" rel="noopener">Engineering Science and Technology, an International Journal</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/expert-systems-with-applications" target="_blank" rel="noopener">Expert Systems with Applications</a><br />
+											<span class="arrow">↪</span> <a href="https://www.tandfonline.com/journals/uemp20" target="_blank" rel="noopener">Electric Power Components and Systems Journal</a><br />
+											<span class="arrow">↪</span> <a href="https://www.sciencedirect.com/journal/computer-physics-communications" target="_blank" rel="noopener">Computer Physics Communications</a>
+										</td>
+										<td>
+											<span class="arrow">↪</span> <a href="https://neurips.cc/" target="_blank" rel="noopener">NeurIPS</a> 2026<br />
+											<span class="arrow">↪</span> <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank" rel="noopener">CVPR</a> 2026<br />
+											<span class="arrow">↪</span> <a href="https://wacv2025.thecvf.com" target="_blank" rel="noopener">WACV</a> 2025<br />
+											<span class="arrow">↪</span> <a href="https://ieeexplore.ieee.org/xpl/conhome/6604419/proceeding" target="_blank" rel="noopener">EUVIP</a> 2023, 2024
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
 					</ul>
 				</div>
-			</footer>
+			</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<!-- WORK -->
+			<section id="work" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">02 — Career</p>
+					<h2>Work Experience</h2>
+					<ul class="brutal-list reveal-stagger">
+						<li class="brutal-card reveal">
+							<h3>Senior Researcher (October 2024 – Present)</h3>
+							<h4>Advanced Research Group (ATG), Dolby Laboratories, Bengaluru, India</h4>
+							<div class="detail">
+								<span class="arrow">↪</span> <em>Leading the development of core component in Dolby’s data platform for continual adaptation of multimodal foundation models from newly arriving datasets, resulting in novel research contributions published
+									at <b>ICML 2026</b>.</em><br />
+								<span class="arrow">↪</span> <em> Leading the development of an agentic AI personalization system for an immersive user experience, resulting
+									in the filing of <b>2 patents</b>.</em><br />
+								<span class="arrow">↪</span> <em>Led the development of a scalable platform backbone that connects independently developed AI services
+									through automated discovery and communication.</em><br />
+								<span class="arrow">↪</span> <em><b>Led intern recruitment</b> and mentorship, leading to multiple research publications at <b>CVPR 2026</b>,
+									<b>ICML 2026</b>. I am also part of the technical recruitment team for the Senior AI Researcher roles.</em><br />
+							</div>
+						</li>
+						<li class="brutal-card reveal">
+							<h3>Senior Edge Applications Research Engineer (July 2024 – September 2024)</h3>
+							<h4>Advanced Research Group (ATG), Dolby Laboratories, Bengaluru, India</h4>
+							<div class="detail">
+								<span class="arrow">↪</span> <em>Led a team to create a hybrid on-prem/cloud compute platform, driving 95%+ experiment reproducibility
+								through <b>pinned dependencies</b> and <b>containerized workflows</b>.</em><br />
+								<span class="arrow">↪</span> <em>Collaborated with researchers to design a system for deploying AI models across diverse edge devices,
+									reducing deployment time from 3 weeks to 1 week.</em><br />
+							</div>
+						</li>
+						<li class="brutal-card reveal">
+							<h3>Postdoctoral Researcher (November 2022 – July 2024)</h3>
+							<h4><a href="https://cvi2.uni.lu/people/" target="_blank" rel="noopener">CVI2 Lab</a>, University of Luxembourg</h4>
+							<div class="detail">
+								<span class="arrow">↪</span> <em>HW-NAS algorithms for edge devices (Raspberry Pi, etc.) for space applications.</em><br />
+								<span class="arrow">↪</span> <em>Published in <b>WACV 2024 and CVPR Workshop 2024</b>.</em><br />
+								<span class="arrow">↪</span> <b>Mentoring</b> PhD student — full-length paper in <b>WACV</b> 2025.<br />
+								<span class="arrow">↪</span> <em><b>Teaching</b> Computer Vision and AI on edge devices.</em>
+							</div>
+						</li>
+						<li class="brutal-card reveal">
+							<h3>Software Engineer Intern (January 2022 – June 2022)</h3>
+							<h4>Microsoft, Taiwan</h4>
+							<div class="detail">
+								<span class="arrow">↪</span> <em>Algorithms that automatically design DNN architectures for multiple tasks.</em><br />
+								<span class="arrow">↪</span> <em><b>Objective:</b> architectures that perform well across more than one task.</em>
+							</div>
+						</li>
+						<li class="brutal-card reveal">
+							<h3>Research Assistant in Luo Lab (February 2017 – May 2017)</h3>
+							<h4>National Cheng Kung University, Taiwan</h4>
+							<div class="detail">
+								<span class="arrow">↪</span> <em>Mathematical model for analysing the 3D heart pulse —
+								<a href="https://www.hindawi.com/journals/ecam/2019/5734018" target="_blank" rel="noopener">paper</a>.</em>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
 
-	</body>
+			<!-- PUBLICATIONS -->
+			<section id="publications" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">03 — Research Output</p>
+					<h2>Selected Publications</h2>
+					<p class="hero-body">
+						<em>Checkout my
+							<span class="pub-links"><a href="https://scholar.google.com/citations?hl=en&user=lyYx7MMAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a></span>
+							for full list of papers.</em>
+					</p>
+					<div class="pub-group reveal">
+						<h3>Multi-Modal AI papers</h3>
+						<table class="pub-table">
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td>Avi Gupta, <b>Nilotpal Sinha</b>, Vishnu Raj, Sambuddha Saha, Pratik Joshi, Koteswar Rao Jerripothula,
+										“Generalizing Multimodal Foundational Models in Context-Driven Class Incremental Learning”,  <b>WACV</b> 2027 (Under Review).
+									</td>
+								</tr>
+								<tr>
+									<td>2.</td>
+									<td>Avi Gupta, <b>Nilotpal Sinha</b>, Vishnu Raj, Sambuddha Saha, Pratik Joshi, Koteswar Rao Jerripothula,
+										“Listen, Look, and Learn: Learning Without Forgetting in SAM-Audio”,  <b>ICML</b> Workshop 2026.
+										Workshop: <a href="https://cats-icml.github.io/" target="_blank" rel="noopener">Continual Adaptation at Scale:
+										Towards Sustainable AI</a>.
+										<span class="pub-links">[<a href="https://openreview.net/forum?id=yjxf1saheJ" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+								<tr>
+									<td>3.</td>
+									<td>Xiyang Wu, Zongxia Li, Jihui Jin, Guangyao Shi, Gouthaman KV, Vishnu Raj, <b>Nilotpal Sinha</b>, Jingxi Chen, Fan Du, Dinesh Manocha,
+										“MASS: Motion-Aware Spatial-Temporal Grounding for Physics Reasoning and Comprehension in Vision-Language Models”,
+										IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>) 2026.
+										<span class="pub-links">[<a href="https://arxiv.org/abs/2511.18373" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="pub-group reveal">
+						<h3>EdgeAI related papers</h3>
+						<table class="pub-table">
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td>Peyman Rostami, <b>Nilotpal Sinha</b>, Nidhaleddine Chenni, Anis Kacem, Abd El Rahman Shabayek, Carl Shneider, Djamila Aouada, “Information Theoretic Pruning of Coupled Channels in Deep Neural Networks”, IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>) 2025.
+										<span class="pub-links">[<a href="https://openaccess.thecvf.com/content/WACV2025/papers/Rostami_Information_Theoretic_Pruning_of_Coupled_Channels_in_Deep_Neural_Networks_WACV_2025_paper.pdf" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+								<tr>
+									<td>2.</td>
+									<td><b>Nilotpal Sinha</b>, Peyman Rostami, Abd El Rahman Shabayek, Anis Kacem, Djamila Aouada, “Multi-Objective Hardware Aware Neural Architecture Search using Hardware Cost Diversity”, IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>) Workshop 2024.
+										Workshop: <a href="https://sites.google.com/view/ecv24/home" target="_blank" rel="noopener">Efficient Deep Learning for Computer Vision</a>.
+										<span class="pub-links">[<a href="https://openaccess.thecvf.com/content/CVPR2024W/ECV24/html/Sinha_Multi-Objective_Hardware_Aware_Neural_Architecture_Search_using_Hardware_Cost_Diversity_CVPRW_2024_paper.html" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+								<tr>
+									<td>3.</td>
+									<td><b>Nilotpal Sinha</b>, Abd El Rahman Shabayek, Anis Kacem, Peyman Rostami, Carl Shneider, Djamila Aouada, “Hardware Aware Evolutionary Neural Architecture Search using Representation Similarity Metric”, IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>) 2024.
+										<span class="pub-links">
+											[<a href="https://openaccess.thecvf.com/content/WACV2024/html/Sinha_Hardware_Aware_Evolutionary_Neural_Architecture_Search_Using_Representation_Similarity_Metric_WACV_2024_paper.html" target="_blank" rel="noopener">paper</a>]
+											[<a href="https://www.youtube.com/watch?v=hUHSBlOyfA8" target="_blank" rel="noopener">Video</a>]
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="pub-group reveal">
+						<h3>Neural Architecture Search related papers</h3>
+						<table class="pub-table">
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Neural Architecture Search using Covariance Matrix Adaptation Evolution Strategy”. Evolutionary Computation (MIT Press) 2023 (Impact Factor: 6.8).
+										<span class="pub-links">
+											[<a href="https://direct.mit.edu/evco/article-abstract/doi/10.1162/evco_a_00331/115656/Neural-Architecture-Search-using-Covariance-Matrix?redirectedFrom=fulltext" target="_blank" rel="noopener">paper</a>]
+											[<a href="https://arxiv.org/abs/2204.00188" target="_blank" rel="noopener">arXiv</a>]
+											[<a href="https://github.com/nightstorm0909/CMANAS" target="_blank" rel="noopener">code</a>]
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>2.</td>
+									<td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Novelty Driven Evolutionary Neural Architecture Search", ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO) 2022.
+										<span class="pub-links">
+											[<a href="https://dl.acm.org/doi/abs/10.1145/3520304.3528889" target="_blank" rel="noopener">paper</a>]
+											[<a href="https://arxiv.org/abs/2204.00188" target="_blank" rel="noopener">arXiv</a>]
+											[<a href="https://github.com/nightstorm0909/NEvoNAS" target="_blank" rel="noopener">code</a>]
+											[<a href="https://www.youtube.com/watch?v=g6ANX__Y5mQ" target="_blank" rel="noopener">Video</a>]
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>3.</td>
+									<td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Neural Architecture Search using Progressive Evolution", ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO) 2022.
+										<span class="pub-links">
+											[<a href="https://dl.acm.org/doi/abs/10.1145/3512290.3528707" target="_blank" rel="noopener">paper</a>]
+											[<a href="https://arxiv.org/abs/2203.01559" target="_blank" rel="noopener">arXiv</a>]
+											[<a href="https://github.com/nightstorm0909/pEvoNAS" target="_blank" rel="noopener">code</a>]
+											[<a href="https://www.youtube.com/watch?v=8R2D_ZolsGs" target="_blank" rel="noopener">Video</a>]
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>4.</td>
+									<td><b>Nilotpal Sinha</b>, Kuan-Wen Chen, “Evolving Neural Architecture Using One Shot Model", ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO) 2021.
+										<span class="pub-links">
+											[<a href="https://dl.acm.org/doi/10.1145/3449639.3459275" target="_blank" rel="noopener">paper</a>]
+											[<a href="https://github.com/nightstorm0909/EvNAS" target="_blank" rel="noopener">code</a>]
+											[<a href="https://www.youtube.com/watch?v=NHw_hYh7CT0" target="_blank" rel="noopener">Video</a>]
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="pub-group reveal">
+						<h3>Bio-Medical Signal Processing related paper</h3>
+						<table class="pub-table">
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td>Bo Peng, Ching-Hsing Luo, <b>Nilotpal Sinha</b>, Cheng-Chi Tai, Xiaohua Xie and Haiqing Xie, “Fourier Series Analysis for Novel Spatiotemporal Pulse Waves: Normal, Taut, and Slippery Pulse Images”, Evidence-based Complementary and Alternative Medicine, Volume 2019 (Impact Factor: 2.06).
+										<span class="pub-links">[<a href="https://www.hindawi.com/journals/ecam/2019/5734018" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="pub-group reveal">
+						<h3>Signal Processing related papers</h3>
+						<table class="pub-table">
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td>S K Singh, D Kumari, <b>Nilotpal Sinha</b>, A K Goswami, N Sinha “Gravity Search Algorithm hybridized Recursive Least Square method for power system harmonic estimation”, Engineering Science and Technology, an International Journal (Elsevier), DOI- 10.1016/j.jestch.2017.01.006, 2017. (Impact Factor: 5.7).
+										<span class="pub-links">[<a href="https://www.sciencedirect.com/science/article/pii/S2215098616308710" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+								<tr>
+									<td>2.</td>
+									<td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Robust Estimation of Power System Harmonics Using a Hybrid Firefly Based Recursive Least Square Algorithm”, International Journal of Electrical Power and Energy Systems (IJEPES) (Elsevier) Journal, Elsevier, vol. 80, Issue C, Pages 287 – 296, 2016. (Impact Factor: 5.2)
+										<span class="pub-links">[<a href="https://www.sciencedirect.com/science/article/pii/S0142061516000582" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+								<tr>
+									<td>3.</td>
+									<td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Several Variants of Kalman Filter Algorithm for Power System Harmonic Estimation”, International Journal of Electrical Power and Energy Systems (IJEPES) (Elsevier), Vol. 78, issue C, Pages 793 - 800, 2016. (Impact Factor: 5.2)
+										<span class="pub-links">[<a href="https://www.sciencedirect.com/science/article/pii/S0142061515005803" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+								<!--<tr>
+									<td>4.</td>
+									<td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Optimal Estimation of Power System Harmonics Using a Hybrid Firefly Algorithm Based Least Square Method”, Soft Computing, Springer Journal, pages 1-14, 2015. (Impact Factor: 4.1)
+										<span class="pub-links">[<a href="https://link.springer.com/article/10.1007/s00500-015-1877-0" target="_blank" rel="noopener">paper</a>]</span>
+									</td>
+								</tr>
+								<tr>
+									<td>5.</td>
+									<td>S. K. Singh, <b>Nilotpal Sinha</b>, A. K. Goswami, N. Sinha, “Variable Constraint Based Least Mean Square Algorithm for Power System Harmonic Parameter Estimation”, International Journal of Electrical Power and Energy Systems (IJEPES) (Elsevier), vol. 73, Pages 218-228, 2015. (Impact Factor: 5.2)
+										<span class="pub-links">[<a href="https://www.sciencedirect.com/science/article/pii/S0142061515002008" target="_blank" rel="noopener">paper</a>]</span>
+									</td>-->
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<!-- PROJECTS -->
+			<section id="projects" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">04 — Side Work</p>
+					<h2>Personal Projects</h2>
+					<div class="project-grid reveal-stagger">
+						<article class="project reveal">
+							<a href="NAS.html" class="project-img">
+								<img src="images/neural-network-pixabay.png" alt="Neural network visualization" />
+							</a>
+							<div class="project-body">
+								<h2>Neural Architecture Search</h2>
+								<ul>
+									<li>Algorithms for automatically searching deep neural network architectures for image classification, implemented in Python and <span class="tag">PyTorch</span>.</li>
+									<li>Evolving Neural Architecture Using One Shot Model, ACM SIGEVO GECCO 2021.</li>
+									<li>Progressive Evolutionary Neural Architecture Search, ACM SIGEVO GECCO 2022.</li>
+									<li>Novelty Driven Evolutionary Neural Architecture Search, ACM SIGEVO GECCO 2022.</li>
+									<li>Neural Architecture Search using Covariance Matrix Adaptation Evolution Strategy, Evolutionary Computation (MIT Press) 2023.</li>
+								</ul>
+								<ul class="btn-row">
+									<li><a href="NAS.html" class="btn">See More</a></li>
+								</ul>
+							</div>
+						</article>
+
+						<article class="project reveal">
+							<a href="https://github.com/nightstorm0909/DroneGO" target="_blank" rel="noopener" class="project-img">
+								<img src="images/drone-unsplash.jpg" alt="Drone in flight" />
+							</a>
+							<div class="project-body">
+								<h2>Drone Go</h2>
+								<ul>
+									<li>Control a Parrot AR Drone 2.0 to follow an object of particular color using the Median Flow tracker from <span class="tag">OpenCV</span>.</li>
+									<li>PID controller for drone movement.</li>
+									<li>Communication architecture for Facebook status/stop and local-network speaker alarms during pursuit.</li>
+									<li>Majority in <span class="tag">C++</span>; Facebook and speaker communication in Python.</li>
+								</ul>
+								<ul class="btn-row">
+									<li><a href="https://github.com/nightstorm0909/DroneGO" target="_blank" rel="noopener" class="btn">Code</a></li>
+									<li><a href="https://1drv.ms/v/s!Ap7hdSPdxJiwgpImImX5oPlY17cRzg?e=gxeJfD" target="_blank" rel="noopener" class="btn">Demo Video</a></li>
+								</ul>
+							</div>
+						</article>
+
+						<!--
+						<article class="project reveal">
+							<a href="https://github.com/nightstorm0909/ChessAI" target="_blank" rel="noopener" class="project-img">
+								<img src="images/chess-unsplash.jpg" alt="Chess pieces" />
+							</a>
+							<div class="project-body">
+								<h2>Chess AI</h2>
+								<ul>
+									<li>Four AI agents aimed at beating the author at chess.</li>
+									<li>Classical Alpha-beta, deep RL with Monte Carlo Tree Search, and hybrid classical + deep learning agents.</li>
+									<li>PyTorch and Keras with TensorFlow backend.</li>
+								</ul>
+								<ul class="btn-row">
+									<li><a href="https://github.com/nightstorm0909/ChessAI" target="_blank" rel="noopener" class="btn">Code</a></li>
+								</ul>
+							</div>
+						</article>
+						-->
+
+						<article class="project reveal" id="100books">
+							<a href="./books100.html" class="project-img">
+								<img src="images/books-unsplash.jpg" alt="Stack of books" />
+							</a>
+							<div class="project-body">
+								<h2>Journey of Reading 100 Books</h2>
+								<p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">
+									A quest that started on March 2019 reached its first milestone: <em>“reading 100 books”</em>.
+									It started with a simple goal: “Do I know a little bit more than what I knew yesterday?”
+									This journey introduced topics missing from traditional school education…
+								</p>
+								<ul class="btn-row">
+									<li><a href="./books100.html" class="btn">Read More</a></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- CONTACT -->
+			<section id="contact" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">05 — Reach Out</p>
+					<div class="contact-box reveal">
+						<h2>Get in touch</h2>
+						<ul class="contact-list">
+							<li><b>Email:</b> nightstorm1990[at]protonmail.com</li>
+							<li>
+								<h3>Social</h3>
+								<ul class="social-icons">
+									<li><a href="https://github.com/nightstorm0909" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/nilotpal-sinha-382b2357" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									<li><a href="https://www.researchgate.net/profile/Nilotpal-Sinha" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fa fa-flask" aria-hidden="true"></i></a></li>
+								</ul>
+							</li>
+							<li>
+								If you are interested in my reading list, check my
+								<a href="https://www.goodreads.com/user/show/118703212-neel" target="_blank" rel="noopener">Goodreads profile</a>.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- MISC -->
+			<section id="miscellaneous" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">06 — Goals</p>
+					<h2>Goals</h2>
+					<div class="goals-grid reveal-stagger">
+						<article class="goal reveal">
+							<div class="goal-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
+							<h3><a href="./books100.html">Reading 100 books</a> <span class="status">✓ Done</span></h3>
+							<p>
+								Started March 2019; finished in 3 years. Key insight:
+								“It is just as difficult to unlearn something as it is to learn something.”
+								<a href="./books100.html">Read More</a>
+							</p>
+						</article>
+						<article class="goal reveal">
+							<div class="goal-icon"><i class="fa fa-university" aria-hidden="true"></i></div>
+							<h3>Learn something new every day <span class="status">Lifelong</span></h3>
+							<ul>
+								<li>Long-term aim: finish reading 1000 books in the next 20 years.</li>
+								<li>See what I’m reading on
+									<a href="https://www.goodreads.com/review/list/118703212-leen?shelf=currently-reading" target="_blank" rel="noopener">Goodreads</a>.
+								</li>
+							</ul>
+						</article>
+						<article class="goal reveal">
+							<div class="goal-icon"><i class="fa fa-heartbeat" aria-hidden="true"></i></div>
+							<h3>Healthy lifestyle <span class="status">Lifelong</span></h3>
+							<ul>
+								<li>Exercise, healthy eating, intermittent fasting with positive results.</li>
+								<li>Gym at least 3 times a week.</li>
+							</ul>
+						</article>
+						<article class="goal reveal">
+							<div class="goal-icon"><i class="fa fa-atom" aria-hidden="true"></i></div>
+							<h3>Quantum Computing <span class="status">✓ Done</span></h3>
+							<ul>
+								<li>Summer 2020 pet project on quantum mechanics for computation.</li>
+								<li>
+									<a href="https://1drv.ms/b/s!Ap7hdSPdxJiwgqIVjzmUAw6C7pkUdA?e=DPfogv" target="_blank" rel="noopener">Bronze</a>
+									and
+									<a href="https://1drv.ms/b/s!Ap7hdSPdxJiwgqI1GsQ_rGT_KIlYXw?e=SYGbPX" target="_blank" rel="noopener">Silver</a>
+									diplomas from
+									<a href="https://qworld.net/" target="_blank" rel="noopener">QWorld</a>
+									— experience with
+									<a href="https://qiskit.org/" target="_blank" rel="noopener">Qiskit</a>.
+								</li>
+							</ul>
+						</article>
+						<article class="goal reveal">
+							<div class="goal-icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
+							<h3>Blockchain <span class="status">✓ Done</span></h3>
+							<p>
+								Explored blockchain after reading about investment; now appreciate the technology beyond fiat replacement.
+							</p>
+						</article>
+						<article class="goal reveal">
+							<div class="goal-icon"><i class="fa fa-refresh" aria-hidden="true"></i></div>
+							<h3>Habit of not making a habit <span class="status">Lifelong</span></h3>
+							<p>
+								Humans habit-form for speed, not optimality. Since we are designed to create habits,
+								the aim is to create a habit of not making a habit.
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script src="assets/js/brutalist.js?v=3"></script>
+</body>
 </html>
