@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+	<title>Books 101 - 200 — Nilotpal Sinha</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EE9QZTESS2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-EE9QZTESS2');
+	</script>
+	<link rel="stylesheet" href="assets/css/brutalist.css?v=5" />
+	<style>
+		.bv-hint { color: var(--muted); font-size: 0.85rem; margin: -0.4rem 0 1.5rem; }
+		.bv-intro { font-size: 1rem; max-width: 60ch; margin-bottom: 2rem; }
+
+		/* Stats */
+		.bv-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+		.bv-stat { border: 3px solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm);
+			padding: 1.1rem 0.5rem; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+		.bv-stat:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--border); }
+		.bv-stat .num { font-family: "Space Grotesk", sans-serif; font-size: 2.4rem; font-weight: 700; color: var(--accent); line-height: 1.1; }
+		.bv-stat .lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+		/* Category donut */
+		.bv-cat { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center;
+			border: 3px solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); padding: 1.5rem; }
+		.bv-donut { width: 260px; height: 260px; }
+		.bv-donut circle { fill: none; stroke-width: 34; cursor: pointer; transition: opacity 0.2s; }
+		.bv-donut text { fill: var(--fg); text-anchor: middle; font-family: "Space Grotesk", sans-serif; }
+		.bv-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 2rem; }
+		.bv-legend-col { display: flex; flex-direction: column; gap: 0.3rem; align-items: flex-start; }
+
+		/* Shared clickable chip */
+		.bv-chip { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;
+			padding: 0.15rem 0.5rem; border: 2px solid transparent; font-size: 0.8rem; font-family: "IBM Plex Mono", monospace;
+			color: var(--fg); transition: background 0.15s, border-color 0.15s, box-shadow 0.15s; }
+		.bv-chip:hover, .bv-chip:focus-visible { border-color: var(--border); background: var(--surface); box-shadow: var(--shadow-sm); }
+		.bv-chip.active { background: var(--accent); color: var(--accent-ink); border-color: var(--border); }
+		.bv-swatch { width: 0.95rem; height: 0.95rem; border: 2px solid var(--border); flex: none; }
+		.bv-chip .count { opacity: 0.65; font-weight: 700; }
+
+		/* Genre cloud */
+		.bv-cloud { text-align: center; line-height: 2.4; border: 3px solid var(--border); background: var(--surface);
+			box-shadow: var(--shadow-sm); padding: 1.25rem; }
+		.bv-cloud .bv-chip { margin: 0 0.1rem; line-height: 1.3; }
+		.bv-cloud .bv-chip.hot { color: var(--accent); font-family: "Space Grotesk", sans-serif; }
+		.bv-cloud .bv-chip.hot.active { color: var(--accent-ink); }
+
+		/* Bookshelf */
+		.bv-controls { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 2rem; }
+		.bv-controls input { flex: 1 1 240px; font-family: inherit; font-size: 0.85rem; padding: 0.7rem 0.9rem;
+			border: 3px solid var(--border); background: var(--surface); color: var(--fg); box-shadow: var(--shadow-sm); outline: none; }
+		.bv-controls input:focus { box-shadow: 5px 5px 0 var(--accent); }
+		.bv-filter-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+		.bv-clear { all: unset; cursor: pointer; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+			padding: 0.5rem 0.8rem; border: 3px solid var(--border); background: var(--surface); color: var(--fg); box-shadow: var(--shadow-sm); }
+		.bv-clear:hover { background: var(--accent); color: var(--accent-ink); }
+		.bv-clear[hidden] { display: none; }
+		/* Each slot carries its own piece of shelf board so wrapped rows still look like shelves. */
+		.bv-shelf { display: flex; flex-wrap: wrap; row-gap: 2rem; }
+		.bv-slot { display: flex; align-items: flex-end; height: 250px; padding: 0 2px; border-bottom: 10px solid var(--border); }
+		.bv-spine { all: unset; box-sizing: border-box; cursor: pointer; min-width: 30px; border: 2px solid var(--border); border-bottom: none;
+			display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 6px 5px 4px;
+			color: #111111; box-shadow: inset -4px 0 0 rgba(0,0,0,0.15);
+			transition: transform 0.15s, opacity 0.25s, filter 0.25s; }
+		.bv-spine:hover, .bv-spine:focus-visible { transform: translateY(-10px); }
+		.bv-spine .title { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11px; font-weight: 700;
+			line-height: 1.15; white-space: normal; text-align: center; }
+		.bv-spine .no { font-size: 9px; font-weight: 700; opacity: 0.8; margin-top: 4px; }
+		.bv-spine.dim { opacity: 0.12; filter: grayscale(1); }
+
+		/* Modal */
+		.bv-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; align-items: center;
+			justify-content: center; z-index: 1000; padding: 1rem; }
+		.bv-modal.open { display: flex; }
+		.bv-card { background: var(--surface); color: var(--fg); border: 4px solid var(--border); border-top-width: 14px;
+			box-shadow: var(--shadow); max-width: 36rem; width: 100%; padding: 2rem; position: relative; }
+		.bv-card h3 { font-size: 1.5rem; margin: 0.4rem 0 0.4rem; }
+		.bv-card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+		.bv-card .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+		.bv-card .tags span { font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.5rem; border: 2px solid var(--border); background: var(--bg); }
+		.bv-close { all: unset; cursor: pointer; position: absolute; top: 0.4rem; right: 0.8rem; font-size: 1.8rem; line-height: 1; color: var(--fg); }
+		.bv-close:hover { color: var(--accent); }
+
+		@media (max-width: 640px) {
+			.bv-legend { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<div class="mobile-bar">
+		<div class="brand-mark">N. Sinha<span>Researcher</span></div>
+		<div class="mobile-bar-actions">
+			<button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">Menu</button>
+		</div>
+	</div>
+	<div class="backdrop" id="backdrop" hidden></div>
+
+	<div class="site">
+		<aside class="sidebar" id="sidebar">
+			<div class="brand-mark">Nilotpal Sinha<span>AI Researcher</span></div>
+			<nav aria-label="Primary">
+				<ul class="nav-list">
+					<li><a href="index.html">&larr; Home</a></li>
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#categories">What I Read</a></li>
+					<li><a href="#genres">Genre Cloud</a></li>
+					<li><a href="#shelf">Bookshelf</a></li>
+					<li><a href="books100.html">First 100 Books</a></li>
+				</ul>
+			</nav>
+			<div class="theme-toggle">
+				<label id="themeLabel">Theme</label>
+				<div class="theme-btns" role="group" aria-labelledby="themeLabel">
+					<button type="button" id="bvThemeLight" aria-pressed="true">Light</button>
+					<button type="button" id="bvThemeDark" aria-pressed="false">Dark</button>
+				</div>
+			</div>
+		</aside>
+
+		<main>
+			<section id="overview" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">Reading Journey / Books 101+</p>
+					<h1>The Next 100 Books</h1>
+					<p class="bv-intro">
+						A visual tour of books <b>#101 onwards</b> of my reading journey.
+						Continuing from <a href="books100.html">the first 100 books</a>.
+					</p>
+					<div class="bv-stats" id="bv-stats"></div>
+				</div>
+			</section>
+
+			<section id="categories" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">01 — Categories</p>
+					<h2>What I Read</h2>
+					<p class="bv-hint">Each book is assigned to one broad category based on its genres. Click a category to highlight it on the bookshelf.</p>
+					<div class="bv-cat">
+						<svg class="bv-donut" id="bv-donut" viewBox="0 0 260 260"></svg>
+						<div class="bv-legend" id="bv-legend"></div>
+					</div>
+				</div>
+			</section>
+
+			<section id="genres" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">02 — Genres</p>
+					<h2>Genre Cloud</h2>
+					<p class="bv-hint">Most frequent Goodreads genre tags. Click a tag to filter the bookshelf.</p>
+					<div class="bv-cloud" id="bv-cloud"></div>
+				</div>
+			</section>
+
+			<section id="shelf" class="section reveal">
+				<div class="section-inner">
+					<p class="section-label">03 — Bookshelf</p>
+					<h2>The Bookshelf</h2>
+					<p class="bv-hint">Books in the order I finished them. Click a spine for details.</p>
+					<div class="bv-controls">
+						<input type="text" id="bv-search" placeholder="Search title or author..." aria-label="Search books" />
+						<span class="bv-filter-label" id="bv-filter-label"></span>
+						<button class="bv-clear" id="bv-clear" type="button" hidden>Clear filter</button>
+					</div>
+					<div id="bv-shelves"></div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<!-- Book detail modal -->
+	<div class="bv-modal" id="bv-modal" role="dialog" aria-modal="true" aria-labelledby="bv-m-title">
+		<div class="bv-card" id="bv-card">
+			<button class="bv-close" id="bv-close" type="button" aria-label="Close">&times;</button>
+			<p class="section-label" id="bv-m-no"></p>
+			<h3 id="bv-m-title"></h3>
+			<div class="meta" id="bv-m-meta"></div>
+			<div class="tags" id="bv-m-tags"></div>
+			<a class="btn btn-primary" id="bv-m-link" target="_blank" rel="noopener noreferrer">View on Goodreads</a>
+		</div>
+	</div>
+
+	<script src="assets/js/brutalist.js?v=3"></script>
+	<script>
+	// Own storage key so this page's theme is independent of index.html; defaults to light.
+	(function () {
+		const key = "neel-books200-theme";
+		const lightBtn = document.getElementById("bvThemeLight");
+		const darkBtn = document.getElementById("bvThemeDark");
+		function setTheme(theme, save) {
+			document.documentElement.setAttribute("data-theme", theme);
+			lightBtn.setAttribute("aria-pressed", theme === "light");
+			darkBtn.setAttribute("aria-pressed", theme === "dark");
+			if (save) { try { localStorage.setItem(key, theme); } catch (e) {} }
+		}
+		let saved = null;
+		try { saved = localStorage.getItem(key); } catch (e) {}
+		setTheme(saved === "dark" ? "dark" : "light", false);
+		lightBtn.addEventListener("click", () => setTheme("light", true));
+		darkBtn.addEventListener("click", () => setTheme("dark", true));
+	})();
+	</script>
+	<script>
+	(function () {
+		const CATEGORIES = [
+			{ name: "Sci-Fi & Dystopia",   color: "#6fc3df", fiction: true,  keys: ["Science Fiction", "Dystopia", "Post Apocalyptic", "Space Opera"] },
+			{ name: "Fantasy",             color: "#8d82c4", fiction: true,  keys: ["Fantasy", "Magic", "Magical Realism"] },
+			{ name: "Horror & Gothic",     color: "#ec8d81", fiction: true,  keys: ["Horror", "Gothic", "Zombies", "Vampires"] },
+			{ name: "Classics & Literary", color: "#e7b788", fiction: true,  keys: ["Classics", "Historical Fiction", "Literature", "Literary Fiction", "Romance", "Contemporary", "Novels", "Short Stories"] },
+			{ name: "History",             color: "#b08968", fiction: false, keys: ["History", "Ancient History", "World History", "Military History", "American History", "Historical", "Holocaust", "World War II", "War"] },
+			{ name: "Science & Tech",      color: "#87c5a4", fiction: false, keys: ["Science", "Biology", "Physics", "Technology", "Artificial Intelligence", "Computer Science", "Popular Science", "Neuroscience", "Medicine", "Engineering", "Evolution", "Space", "Astronomy"] },
+			{ name: "Business & Economics",color: "#8ea9e8", fiction: false, keys: ["Business", "Economics", "Finance", "Money", "Entrepreneurship", "Personal Finance"] },
+			{ name: "Mind & Philosophy",   color: "#d291bc", fiction: false, keys: ["Philosophy", "Psychology", "Self Help", "Religion", "Spirituality", "Buddhism", "Personal Development"] },
+			{ name: "Biography & Memoir",  color: "#f6e58d", fiction: false, keys: ["Biography", "Memoir", "Autobiography", "Biography Memoir"] },
+			{ name: "Society & Politics",  color: "#e17055", fiction: false, keys: ["Politics", "Sociology", "True Crime", "Crime", "Society", "Journalism"] }
+		];
+		const OTHER = { fiction: { name: "Other Fiction", color: "#9aa0b5", fiction: true }, nonfiction: { name: "Other Nonfiction", color: "#9aa0b5", fiction: false } };
+		const GENRE_FIXES = { "Buisness": "Business", "Non fiction": "Nonfiction", "Non-fiction": "Nonfiction" };
+
+		const $ = (id) => document.getElementById(id);
+		const el = (tag, cls, text) => {
+			const e = document.createElement(tag);
+			if (cls) e.className = cls;
+			if (text !== undefined) e.textContent = text;
+			return e;
+		};
+
+		function parseCSV(text) {
+			const rows = [];
+			let row = [], field = "", inQuotes = false;
+			for (let i = 0; i < text.length; i++) {
+				const c = text[i];
+				if (inQuotes) {
+					if (c === '"') {
+						if (text[i + 1] === '"') { field += '"'; i++; } else inQuotes = false;
+					} else field += c;
+				} else if (c === '"') inQuotes = true;
+				else if (c === ",") { row.push(field); field = ""; }
+				else if (c === "\n" || c === "\r") {
+					if (c === "\r" && text[i + 1] === "\n") i++;
+					row.push(field); rows.push(row); row = []; field = "";
+				} else field += c;
+			}
+			if (field || row.length) { row.push(field); rows.push(row); }
+			return rows.filter(r => r.some(f => f.trim() !== ""));
+		}
+
+		function parseGenres(raw) {
+			const seen = new Set();
+			return raw.split(/,|\.\s/).map(g => {
+				g = g.trim();
+				if (g.includes(">")) g = g.split(">").pop().trim();
+				return GENRE_FIXES[g] || g;
+			}).filter(g => g && !seen.has(g) && seen.add(g));
+		}
+
+		function parseAuthors(raw) {
+			const m = raw.trim().match(/^(.*?)\s+by\s+(.*)$/i);
+			const format = m ? m[1].trim() : "Book";
+			const names = (m ? m[2] : raw).split(/,\s*and\s+|\s+and\s+|,\s*/).map(s => s.trim()).filter(Boolean);
+			return { format: format.charAt(0).toUpperCase() + format.slice(1).toLowerCase(), names };
+		}
+
+		function categorize(genres) {
+			const fiction = !genres.includes("Nonfiction");
+			for (const g of genres) {
+				const cat = CATEGORIES.find(c => c.fiction === fiction && c.keys.includes(g));
+				if (cat) return cat;
+			}
+			return fiction ? OTHER.fiction : OTHER.nonfiction;
+		}
+
+		function hash(str) {
+			let h = 0;
+			for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0;
+			return Math.abs(h);
+		}
+
+		function countBy(items) {
+			const m = new Map();
+			items.forEach(k => m.set(k, (m.get(k) || 0) + 1));
+			return [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+		}
+
+		// ---------- State / filtering ----------
+		let books = [];
+		let filter = null; // { type: "category"|"genre", value, label }
+		let query = "";
+
+		function matches(b) {
+			if (filter) {
+				if (filter.type === "category" && b.category.name !== filter.value) return false;
+				if (filter.type === "genre" && !b.genres.includes(filter.value)) return false;
+			}
+			if (query) {
+				const hay = (b.title + " " + b.authors.join(" ")).toLowerCase();
+				if (!hay.includes(query)) return false;
+			}
+			return true;
+		}
+
+		function setFilter(f, scroll) {
+			const same = filter && f && filter.type === f.type && filter.value === f.value;
+			filter = same ? null : f;
+			applyFilter();
+			if (filter && scroll) $("shelf").scrollIntoView({ behavior: "smooth" });
+		}
+
+		function applyFilter() {
+			let n = 0;
+			document.querySelectorAll(".bv-spine").forEach(s => {
+				const ok = matches(books[+s.dataset.idx]);
+				s.classList.toggle("dim", !ok);
+				if (ok) n++;
+			});
+			document.querySelectorAll("[data-filter-type]").forEach(c => {
+				c.classList.toggle("active", !!filter && c.dataset.filterType === filter.type && c.dataset.filterValue === filter.value);
+			});
+			document.querySelectorAll("#bv-donut circle").forEach(c => {
+				c.style.opacity = !filter || filter.type !== "category" || c.dataset.filterValue === filter.value ? 1 : 0.25;
+			});
+			const active = filter || query;
+			$("bv-filter-label").textContent = active
+				? `${n} of ${books.length} books` + (filter ? ` · ${filter.label}` : "")
+				: "";
+			$("bv-clear").hidden = !active;
+		}
+
+		// ---------- Renderers ----------
+		function renderStats() {
+			const authors = new Set(books.flatMap(b => b.authors));
+			const genres = new Set(books.flatMap(b => b.genres));
+			const fiction = books.filter(b => b.category.fiction).length;
+			const first = books[0].no, last = books[books.length - 1].no;
+			const stats = [
+				[books.length, `Books (#${first}–#${last})`],
+				[books.length - fiction, "Nonfiction"],
+				[fiction, "Fiction"],
+				[authors.size, "Authors"],
+				[genres.size, "Genre tags"]
+			];
+			const wrap = $("bv-stats");
+			stats.forEach(([num, lbl]) => {
+				const s = el("div", "bv-stat");
+				s.append(el("div", "num", num), el("div", "lbl", lbl));
+				wrap.append(s);
+			});
+		}
+
+		function renderCategories() {
+			const counts = countBy(books.map(b => b.category.name));
+			const byName = new Map([...CATEGORIES, OTHER.fiction, OTHER.nonfiction].map(c => [c.name, c]));
+			const svg = $("bv-donut");
+			const NS = "http://www.w3.org/2000/svg";
+			const r = 95, C = 2 * Math.PI * r;
+			// Fiction slices first, then nonfiction, so the halves read as two arcs.
+			const ordered = counts.slice().sort((a, b) => byName.get(b[0]).fiction - byName.get(a[0]).fiction);
+			let offset = 0;
+			ordered.forEach(([name, count]) => {
+				const cat = byName.get(name);
+				const len = (count / books.length) * C;
+				const circle = document.createElementNS(NS, "circle");
+				circle.setAttribute("cx", 130); circle.setAttribute("cy", 130); circle.setAttribute("r", r);
+				circle.setAttribute("stroke", cat.color);
+				circle.setAttribute("stroke-dasharray", `${Math.max(len - 2, 0.5)} ${C}`);
+				circle.setAttribute("stroke-dashoffset", -offset);
+				circle.setAttribute("transform", "rotate(-90 130 130)");
+				circle.dataset.filterValue = name;
+				const title = document.createElementNS(NS, "title");
+				title.textContent = `${name}: ${count}`;
+				circle.append(title);
+				circle.addEventListener("click", () => setFilter({ type: "category", value: name, label: name }, true));
+				svg.append(circle);
+				offset += len;
+			});
+			const t1 = document.createElementNS(NS, "text");
+			t1.setAttribute("x", 130); t1.setAttribute("y", 128); t1.setAttribute("font-size", 40); t1.setAttribute("font-weight", 700);
+			t1.textContent = books.length;
+			const t2 = document.createElementNS(NS, "text");
+			t2.setAttribute("x", 130); t2.setAttribute("y", 155); t2.setAttribute("font-size", 14); t2.setAttribute("opacity", 0.7);
+			t2.textContent = "books";
+			svg.append(t1, t2);
+
+			const legend = $("bv-legend");
+			[["Fiction", true], ["Nonfiction", false]].forEach(([label, isFiction]) => {
+				const col = el("div", "bv-legend-col");
+				col.append(el("h4", null, label));
+				ordered.filter(([n]) => byName.get(n).fiction === isFiction).forEach(([name, count]) => {
+					const chip = el("button", "bv-chip");
+					chip.type = "button";
+					chip.dataset.filterType = "category";
+					chip.dataset.filterValue = name;
+					const sw = el("span", "bv-swatch");
+					sw.style.background = byName.get(name).color;
+					chip.append(sw, el("span", null, name), el("span", "count", count));
+					chip.addEventListener("click", () => setFilter({ type: "category", value: name, label: name }));
+					col.append(chip);
+				});
+				legend.append(col);
+			});
+		}
+
+		function renderCloud() {
+			const skip = new Set(["Fiction", "Nonfiction", "Audiobook"]);
+			const counts = countBy(books.flatMap(b => b.genres).filter(g => !skip.has(g))).slice(0, 45);
+			const max = counts[0][1], min = counts[counts.length - 1][1];
+			const cloud = $("bv-cloud");
+			counts.sort((a, b) => a[0].localeCompare(b[0])).forEach(([genre, count]) => {
+				const t = (count - min) / Math.max(max - min, 1);
+				const chip = el("button", "bv-chip" + (t > 0.5 ? " hot" : ""), genre);
+				chip.type = "button";
+				chip.title = `${genre}: ${count} books`;
+				chip.style.fontSize = (0.75 + t * 1.5).toFixed(2) + "rem";
+				chip.style.fontWeight = t > 0.25 ? 700 : 400;
+				chip.dataset.filterType = "genre";
+				chip.dataset.filterValue = genre;
+				chip.addEventListener("click", () => setFilter({ type: "genre", value: genre, label: `Genre: ${genre}` }, true));
+				cloud.append(chip);
+			});
+		}
+
+		function renderShelves() {
+			const shelf = el("div", "bv-shelf");
+			books.forEach((b, i) => {
+				const height = 190 + hash(b.title) % 45;
+				const spine = el("button", "bv-spine");
+				spine.type = "button";
+				spine.dataset.idx = i;
+				spine.title = `#${b.no} ${b.title} — ${b.authors.join(", ")}`;
+				spine.style.background = b.category.color;
+				spine.style.height = height + "px";
+				const title = el("span", "title", b.title);
+				// Fixed inline size makes long titles wrap into extra columns, widening the spine.
+				title.style.height = (height - 30) + "px";
+				spine.append(title, el("span", "no", b.no));
+				spine.addEventListener("click", () => openModal(b));
+				const slot = el("div", "bv-slot");
+				slot.append(spine);
+				shelf.append(slot);
+			});
+			$("bv-shelves").append(shelf);
+		}
+
+		// ---------- Modal ----------
+		let lastFocus = null;
+		function openModal(b) {
+			lastFocus = document.activeElement;
+			$("bv-card").style.borderTopColor = b.category.color;
+			$("bv-m-no").textContent = `Book #${b.no} · ${b.category.name}`;
+			$("bv-m-title").textContent = b.title;
+			$("bv-m-meta").textContent = `${b.format} by ${b.authors.join(", ")}`;
+			const tags = $("bv-m-tags");
+			tags.replaceChildren(...b.genres.map(g => el("span", null, g)));
+			const link = $("bv-m-link");
+			if (/^https:\/\//.test(b.link)) { link.href = b.link; link.hidden = false; } else link.hidden = true;
+			$("bv-modal").classList.add("open");
+			$("bv-close").focus();
+		}
+		function closeModal() {
+			$("bv-modal").classList.remove("open");
+			if (lastFocus) lastFocus.focus();
+		}
+		$("bv-close").addEventListener("click", closeModal);
+		$("bv-modal").addEventListener("click", e => { if (e.target.id === "bv-modal") closeModal(); });
+		document.addEventListener("keydown", e => { if (e.key === "Escape" && $("bv-modal").classList.contains("open")) closeModal(); });
+
+		$("bv-search").addEventListener("input", e => { query = e.target.value.trim().toLowerCase(); applyFilter(); });
+		$("bv-clear").addEventListener("click", () => { filter = null; query = ""; $("bv-search").value = ""; applyFilter(); });
+
+		// ---------- Load ----------
+		fetch("files/BookList101-200.csv")
+			.then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+			.then(text => {
+				books = parseCSV(text).slice(1).map(([no, title, authorRaw, genreRaw, link]) => {
+					const genres = parseGenres(genreRaw || "");
+					const { format, names } = parseAuthors(authorRaw || "");
+					return { no: +no, title: title.trim(), authorRaw, format, authors: names, genres, link: (link || "").trim(), category: categorize(genres) };
+				}).filter(b => b.no && b.title);
+				books.sort((a, b) => a.no - b.no);
+				renderStats();
+				renderCategories();
+				renderCloud();
+				renderShelves();
+				applyFilter();
+			})
+			.catch(err => {
+				$("bv-stats").textContent = "Could not load the book list (" + err.message + ").";
+			});
+	})();
+	</script>
+</body>
+</html>
